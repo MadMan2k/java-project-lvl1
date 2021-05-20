@@ -1,30 +1,23 @@
 package hexlet.code;
 
-import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 
-public class Even {
-//    /**
-//     * START TEMP MAIN
-//     */
-//    public static void main(String[] args) {
-//        evenGame();
-//    }
-//    /**
-//     * END TEMP MAIN
-//     */
-
+public final class Even {
+    /**
+     * Even game class.
+     */
     public static void evenGame() {
-        int maxRandom = 999;
-        int minRandom = 1;
+        final int maxRandom = 999;
+        final int minRandom = 1;
+        final int numberOfQuestions = 3;
         Random randomNum = new Random();
-        int[] showRandomNum = new int[3];
+        int[] showRandomNum = new int[numberOfQuestions];
         showRandomNum[0] = minRandom + randomNum.nextInt(maxRandom);
         showRandomNum[1] = minRandom + randomNum.nextInt(maxRandom);
         showRandomNum[2] = minRandom + randomNum.nextInt(maxRandom);
         System.out.println("Answer 'yes' if number even otherwise answer 'no'.");
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < showRandomNum.length; i++) {
             System.out.println("Question : " + showRandomNum[i]);
             Scanner setAnswer = new Scanner(System.in);
             System.out.print("Your answer: ");
