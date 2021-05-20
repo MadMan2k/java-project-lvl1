@@ -1,12 +1,12 @@
 package hexlet.code;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) {
         String welcome = "Welcome to the Brain Games!";
-        String[] availableGames = new String[3];
+        final int numberofGames = 3;
+        String[] availableGames = new String[numberofGames];
         availableGames[0] = "0 - Exit";
         availableGames[1] = "1 - Greet";
         availableGames[2] = "2 - Even";
@@ -21,20 +21,17 @@ public class App {
         System.out.println();
 
         switch (choosedGame) {
-            case "1": {
+            case "1":
                 System.out.println(welcome);
                 Cli.setName();
                 break;
-            }
-            case "2": {
+            case "2":
                 System.out.println(welcome);
                 Cli.setName();
                 Even.evenGame();
                 break;
-            }
-            default: {
+            default:
                 System.out.println("Invalid choice");
-            }
         }
     }
 }
