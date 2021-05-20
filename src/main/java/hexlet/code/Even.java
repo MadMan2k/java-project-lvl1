@@ -22,7 +22,8 @@ public final class Even {
             Scanner setAnswer = new Scanner(System.in);
             System.out.print("Your answer: ");
             String answer = setAnswer.nextLine();
-            if ((showRandomNum[i] % 2 == 0 && answer.equals("yes")) || (showRandomNum[i] % 2 != 0 && answer.equals("no"))) {
+            if ((showRandomNum[i] % 2 == 0 && answer.equals("yes")) ||
+                    (showRandomNum[i] % 2 != 0 && answer.equals("no"))) {
                 System.out.println("Correct!");
                 if (i == 2) {
                     System.out.println("Congratulations, " + Cli.getSayMyNameSong() + "!");
