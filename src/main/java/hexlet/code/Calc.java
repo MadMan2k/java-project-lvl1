@@ -19,28 +19,21 @@ public class Calc {
             showRandomNum[0] = minRandom + randomNum.nextInt(maxRandom);
             showRandomNum[1] = minRandom + randomNum.nextInt(maxRandom);
             int showRandomOperator = randomNum.nextInt(numberOfOperators);
-            /**
-             * 0 ==> sum ; 1 ==> subtraction ; 2 ==>  product ; default ==> error
-             */
-            switch (showRandomOperator) {
-                case 0: {
+            switch (showRandomOperator) {   // 0 ==> sum ; 1 ==> subtraction ; 2 ==>  product ; default ==> error
+                case 0:
                     resultInt = showRandomNum[0] + showRandomNum[1];
                     System.out.println(question + showRandomNum[0] + " + " + showRandomNum[1]);
                     break;
-                }
-                case 1: {
+                case 1:
                     resultInt = showRandomNum[0] - showRandomNum[1];
                     System.out.println(question + showRandomNum[0] + " - " + showRandomNum[1]);
                     break;
-                }
-                case 2: {
+                case 2:
                     resultInt = showRandomNum[0] * showRandomNum[1];
                     System.out.println(question + showRandomNum[0] + " * " + showRandomNum[1]);
                     break;
-                }
-                default : {
+                default :
                     System.out.println("Error -1");
-                }
             }
             System.out.print("Your answer: ");
             Scanner setAnswer = new Scanner(System.in);
@@ -49,7 +42,8 @@ public class Calc {
                 System.out.println("Correct!");
                 counterOfCorrect++;
             } else {
-                System.out.println("'" + answer + "'" + " is wrong answer ;(. Correct answer was " + "'" + resultInt + "'");
+                System.out.println("'" + answer + "'" + " is wrong answer ;(. Correct answer was "
+                        + "'" + resultInt + "'");
                 System.out.println("Let's try again, " + Cli.getSayMyNameSong() + "!");
                 break;
             }
