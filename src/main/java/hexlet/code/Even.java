@@ -27,17 +27,14 @@ public class Even {
             } else {
                 String correctAnswer = "";
                 switch (showRandomNum % 2) {
-                    case 0: {
+                    case 0:
                         correctAnswer = "yes";
                         break;
-                    }
-                    case 1: {
+                    case 1:
                         correctAnswer = "no";
                         break;
-                    }
-                    default: {
+                    default:
                         System.out.println("ERROR -1");
-                    }
                 }
                 System.out.println("'" + answer + "' is wrong answer ;(. Correct answer was "
                         + "'" + correctAnswer + "'.");
