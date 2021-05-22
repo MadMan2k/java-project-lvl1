@@ -26,7 +26,8 @@ public class Calc {
                 case 2: // The difficulty decreased to one-fifth of its original level for easier game
                     resultInt = (showRandomNum[0] / decreaseDifficulty) * (showRandomNum[1] / decreaseDifficulty);
                     Engine.printQuestion();
-                    System.out.println((showRandomNum[0] / decreaseDifficulty) + " * " + (showRandomNum[1] / decreaseDifficulty));
+                    System.out.println((showRandomNum[0] / decreaseDifficulty) + " * "
+                            + (showRandomNum[1] / decreaseDifficulty));
                     break;
                 default :
                     Engine.printError();
