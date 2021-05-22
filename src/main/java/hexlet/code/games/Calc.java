@@ -1,57 +1,50 @@
 package hexlet.code.games;
 
-import hexlet.code.Cli;
+import hexlet.code.Engine;
 
-import java.util.Random;
 import java.util.Scanner;
 
 public class Calc {
     public static void calcGame() {
-        final String question = "Question : ";
-        final int maxRandom = 49;
-        final int minRandom = 1;
-        final int numberOfTries = 3;
-        final int numberOfOperators = 3;
         int resultInt = 0;
         int counterOfCorrect = 0;
-        Random randomNum = new Random();
-        int[] showRandomNum = new int[2];
+
         System.out.println("What is the result of the expression?");
-        for (int i = 0; i < numberOfTries; i++) {
-            showRandomNum[0] = minRandom + randomNum.nextInt(maxRandom);
-            showRandomNum[1] = minRandom + randomNum.nextInt(maxRandom);
-            int showRandomOperator = randomNum.nextInt(numberOfOperators);
+        for (int i = 0; i < Engine.getNumberOfTries(); i++) {
+            int[] showRandomNum = Engine.showRandomNum();
+            int showRandomOperator = Engine.getRandomNum().nextInt(Engine.getNumberOfOperators());
             switch (showRandomOperator) {   // 0 ==> sum ; 1 ==> subtraction ; 2 ==>  product ; default ==> error
                 case 0:
                     resultInt = showRandomNum[0] + showRandomNum[1];
-                    System.out.println(question + showRandomNum[0] + " + " + showRandomNum[1]);
+                    Engine.printQuestion();
+                    System.out.println(showRandomNum[0] + " + " + showRandomNum[1]);
                     break;
                 case 1:
                     resultInt = showRandomNum[0] - showRandomNum[1];
-                    System.out.println(question + showRandomNum[0] + " - " + showRandomNum[1]);
+                    Engine.printQuestion();
+                    System.out.println(showRandomNum[0] + " - " + showRandomNum[1]);
                     break;
-                case 2:
-                    resultInt = showRandomNum[0] * showRandomNum[1];
-                    System.out.println(question + showRandomNum[0] + " * " + showRandomNum[1]);
+                case 2: // The difficulty decreased to one-fifth of its original level for easier game
+                    resultInt = (showRandomNum[0] / 5) * (showRandomNum[1] / 5);
+                    Engine.printQuestion();
+                    System.out.println((showRandomNum[0] / 5) + " * " + (showRandomNum[1] / 5));
                     break;
                 default :
-                    System.out.println("Error -1");
+                    Engine.printError();
             }
-            System.out.print("Your answer: ");
-            Scanner setAnswer = new Scanner(System.in);
-            int answer = Integer.parseInt(setAnswer.nextLine());
+            int answer = Engine.intYourAnswer();
             if (resultInt == answer) {
-                System.out.println("Correct!");
+                Engine.printCorrect();
                 counterOfCorrect++;
             } else {
                 System.out.println("'" + answer + "'" + " is wrong answer ;(. Correct answer was "
                         + "'" + resultInt + "'");
-                System.out.println("Let's try again, " + Cli.getSayMyNameSong() + "!");
+                Engine.printLetsTryAgain();
                 break;
             }
         }
-        if (counterOfCorrect == numberOfTries) {
-            System.out.println("Congratulations, " + Cli.getSayMyNameSong() + "!");
+        if (counterOfCorrect == Engine.getNumberOfTries()) {
+            Engine.printCongartulations();
         }
     }
 }

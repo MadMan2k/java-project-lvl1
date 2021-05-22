@@ -1,34 +1,26 @@
 package hexlet.code.games;
 
-import hexlet.code.Cli;
-
-import java.util.Random;
-import java.util.Scanner;
+import hexlet.code.Engine;
 
 public class Even {
     /**
      * Even game class.
      */
     public static void evenGame() {
-        final int maxRandom = 49;
-        final int minRandom = 1;
-        final int numberOfTries = 3;
         int counterOfCorrect = 0;
-        Random randomNum = new Random();
         System.out.println("Answer 'yes' if number even otherwise answer 'no'.");
-        for (int i = 0; i < numberOfTries; i++) {
-            int showRandomNum = minRandom + randomNum.nextInt(maxRandom);
-            System.out.println("Question : " + showRandomNum);
-            Scanner setAnswer = new Scanner(System.in);
-            System.out.print("Your answer: ");
-            String answer = setAnswer.nextLine();
-            if ((showRandomNum % 2 == 0 && answer.equals("yes"))
-                    || (showRandomNum % 2 == 1 && answer.equals("no"))) {
-                System.out.println("Correct!");
+        for (int i = 0; i < Engine.getNumberOfTries(); i++) {
+            int[] showRandomNum = Engine.showRandomNum();
+            Engine.printQuestion();
+            System.out.println(showRandomNum[0]);
+            String answer = Engine.stringYourAnswer();
+            if ((showRandomNum[0] % 2 == 0 && answer.equals("yes"))
+                    || (showRandomNum[0] % 2 == 1 && answer.equals("no"))) {
+                Engine.printCorrect();
                 counterOfCorrect++;
             } else {
                 String correctAnswer = "";
-                switch (showRandomNum % 2) {
+                switch (showRandomNum[0] % 2) {
                     case 0:
                         correctAnswer = "yes";
                         break;
@@ -36,15 +28,16 @@ public class Even {
                         correctAnswer = "no";
                         break;
                     default:
-                        System.out.println("ERROR -1");
+                        Engine.printError();
                 }
                 System.out.println("'" + answer + "' is wrong answer ;(. Correct answer was "
                         + "'" + correctAnswer + "'.");
-                System.out.println("Let's try again, " + Cli.getSayMyNameSong() + "!");
+                Engine.printLetsTryAgain();
+                break;
             }
         }
-        if (counterOfCorrect == numberOfTries) {
-            System.out.println("Congratulations, " + Cli.getSayMyNameSong() + "!");
+        if (counterOfCorrect == Engine.getNumberOfTries()) {
+            Engine.printCongartulations();
         }
     }
 }
