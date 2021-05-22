@@ -6,3 +6,5 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://codeclimate.com/github/codeclimate/codeclimate/maintainability)
 
 ASCIINEMA (Even) : https://asciinema.org/a/oWoQ5Cr90mZK7JbBnLWIk11HQ
+
+ASCIINEMA (Calc) : https://asciinema.org/a/EjOHGoZGH8fhXNtAoBrNUWMOl
