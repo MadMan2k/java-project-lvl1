@@ -6,6 +6,7 @@ public class Calc {
     public static void calcGame() {
         int resultInt = 0;
         int counterOfCorrect = 0;
+        final int decreaseDifficulty = 5;
 
         System.out.println("What is the result of the expression?");
         for (int i = 0; i < Engine.getNumberOfTries(); i++) {
@@ -23,9 +24,9 @@ public class Calc {
                     System.out.println(showRandomNum[0] + " - " + showRandomNum[1]);
                     break;
                 case 2: // The difficulty decreased to one-fifth of its original level for easier game
-                    resultInt = (showRandomNum[0] / 5) * (showRandomNum[1] / 5);
+                    resultInt = (showRandomNum[0] / decreaseDifficulty) * (showRandomNum[1] / decreaseDifficulty);
                     Engine.printQuestion();
-                    System.out.println((showRandomNum[0] / 5) + " * " + (showRandomNum[1] / 5));
+                    System.out.println((showRandomNum[0] / decreaseDifficulty) + " * " + (showRandomNum[1] / decreaseDifficulty));
                     break;
                 default :
                     Engine.printError();
