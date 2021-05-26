@@ -4,14 +4,13 @@ import hexlet.code.Engine;
 
 public class Calc {
     public static void calcGame() {
+        final int numberOfOperators = 3;
+        final int decreaseDifficultyCalc = 5;
         int resultInt = 0;
-        int counterOfCorrect = 0;
-        final int decreaseDifficulty = 5;
-
-        System.out.println("What is the result of the expression?");
+        Engine.printRules("calc");
         for (int i = 0; i < Engine.getNumberOfTries(); i++) {
             int[] showRandomNum = Engine.showRandomNum();
-            int showRandomOperator = Engine.getRandomNum().nextInt(Engine.getNumberOfOperators());
+            int showRandomOperator = Engine.getRandomNum().nextInt(numberOfOperators);
             switch (showRandomOperator) {   // 0 ==> sum ; 1 ==> subtraction ; 2 ==>  product ; default ==> error
                 case 0:
                     resultInt = showRandomNum[0] + showRandomNum[1];
@@ -24,27 +23,19 @@ public class Calc {
                     System.out.println(showRandomNum[0] + " - " + showRandomNum[1]);
                     break;
                 case 2: // The difficulty decreased to one-fifth of its original level for easier game
-                    resultInt = (showRandomNum[0] / decreaseDifficulty) * (showRandomNum[1] / decreaseDifficulty);
+                    resultInt = (showRandomNum[0] / decreaseDifficultyCalc) * (showRandomNum[1] / decreaseDifficultyCalc);
                     Engine.printQuestion();
-                    System.out.println((showRandomNum[0] / decreaseDifficulty) + " * "
-                            + (showRandomNum[1] / decreaseDifficulty));
+                    System.out.println((showRandomNum[0] / decreaseDifficultyCalc) + " * "
+                            + (showRandomNum[1] / decreaseDifficultyCalc));
                     break;
                 default :
                     Engine.printError();
             }
             int answer = Engine.intYourAnswer();
-            if (resultInt == answer) {
-                Engine.printCorrect();
-                counterOfCorrect++;
-            } else {
-                System.out.println("'" + answer + "'" + " is wrong answer ;(. Correct answer was "
-                        + "'" + resultInt + "'");
-                Engine.printLetsTryAgain();
+            if (!Engine.verifyAnswerInt(resultInt, answer)) {
                 break;
             }
         }
-        if (counterOfCorrect == Engine.getNumberOfTries()) {
-            Engine.printCongartulations();
-        }
+        Engine.doWeHaveAWinner(Engine.getCounterOfCorrectAnswers(), Engine.getNumberOfTries());
     }
 }

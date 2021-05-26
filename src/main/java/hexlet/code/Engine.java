@@ -5,6 +5,8 @@ import java.util.Scanner;
 
 public class Engine {
 
+    static int counterOfCorrectAnswers = 0;
+
     public static int getMaxRandom() {
         final int maxRandom = 99;
         return maxRandom;
@@ -32,9 +34,53 @@ public class Engine {
         return numberOfTries;
     }
 
-    public static int getNumberOfOperators() {
-        final int numberOfOperators = 3;
-        return numberOfOperators;
+
+    public static void countCorrectAnswer() {
+        counterOfCorrectAnswers ++;
+    }
+
+    public static int getCounterOfCorrectAnswers() {
+        return counterOfCorrectAnswers;
+    }
+
+    public static boolean verifyAnswerInt(int result, int answer) {
+        if (result == answer) {
+            printAnswerIsCorrect();
+            countCorrectAnswer();
+            return true;
+        } else {
+            printAnswerIsWrongInt(result, answer);
+            printLetsTryAgain();
+            return false;
+        }
+    }
+
+    public static boolean verifyAnswerString(String result, String answer) {
+        if (answer.equals(result)) {
+            printAnswerIsCorrect();
+            countCorrectAnswer();
+            return true;
+        } else {
+            printAnswerIsWrongString(result, answer);
+            printLetsTryAgain();
+            return false;
+        }
+    }
+
+    public static void printRules(String selectedGame) {
+        switch (selectedGame){
+            case "even":
+                System.out.println("Answer 'yes' if number even otherwise answer 'no'.");
+                break;
+            case "calc":
+                System.out.println("What is the result of the expression?");
+                break;
+            case "gcd":
+                System.out.println("Find the greatest common divisor of given numbers.");
+                break;
+            default :
+                printError();
+        }
     }
 
     public static void printQuestion() {
@@ -55,8 +101,18 @@ public class Engine {
         return answer;
     }
 
-    public static void printCorrect() {
+    public static void printAnswerIsCorrect() {
         System.out.println("Correct!");
+    }
+
+    public static void printAnswerIsWrongInt(int result, int answer) {
+        System.out.println("'" + answer + "'" + " is wrong answer ;(. Correct answer was "
+                + "'" + result + "'");
+    }
+
+    public static void printAnswerIsWrongString(String result, String answer) {
+        System.out.println("'" + answer + "'" + " is wrong answer ;(. Correct answer was "
+                + "'" + result + "'");
     }
 
     public static void printLetsTryAgain() {
@@ -69,5 +125,11 @@ public class Engine {
 
     public static void printError() {
         System.out.println("Error -1");
+    }
+
+    public static void doWeHaveAWinner(int correctAnswer, int numberOfTries) {
+        if (correctAnswer == numberOfTries) {
+            printCongartulations();
+        }
     }
 }
