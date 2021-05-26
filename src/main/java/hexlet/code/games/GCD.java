@@ -11,7 +11,7 @@ public class GCD {
             Engine.printQuestion();
             System.out.println(showRandomNum[0] + " " + showRandomNum[1]);
             int answer = Engine.intYourAnswer();
-            if (!Engine.verifyAnswerInt(gcdByEuclid(showRandomNum[0], showRandomNum[1] ), answer)) {
+            if (!Engine.verifyAnswerInt(gcdByEuclid(showRandomNum[0], showRandomNum[1]), answer)) {
                 break;
             }
         }

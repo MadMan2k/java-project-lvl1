@@ -23,7 +23,8 @@ public class Calc {
                     System.out.println(showRandomNum[0] + " - " + showRandomNum[1]);
                     break;
                 case 2: // The difficulty decreased to one-fifth of its original level for easier game
-                    resultInt = (showRandomNum[0] / decreaseDifficultyCalc) * (showRandomNum[1] / decreaseDifficultyCalc);
+                    resultInt = (showRandomNum[0] / decreaseDifficultyCalc)
+                            * (showRandomNum[1] / decreaseDifficultyCalc);
                     Engine.printQuestion();
                     System.out.println((showRandomNum[0] / decreaseDifficultyCalc) + " * "
                             + (showRandomNum[1] / decreaseDifficultyCalc));

@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class Engine {
 
-    static int counterOfCorrectAnswers = 0;
+    private static int counterOfCorrectAnswers = 0;
 
     public static int getMaxRandom() {
         final int maxRandom = 99;
@@ -36,7 +36,7 @@ public class Engine {
 
 
     public static void countCorrectAnswer() {
-        counterOfCorrectAnswers ++;
+        counterOfCorrectAnswers++;
     }
 
     public static int getCounterOfCorrectAnswers() {
@@ -68,7 +68,7 @@ public class Engine {
     }
 
     public static void printRules(String selectedGame) {
-        switch (selectedGame){
+        switch (selectedGame) {
             case "even":
                 System.out.println("Answer 'yes' if number even otherwise answer 'no'.");
                 break;

@@ -34,18 +34,18 @@ public class App {
         Cli.setName();
 
         switch (selectedGame) {
-            case 0:
+            case exit0:
                 System.out.println("Not ready, TODO");
                 break;
-            case 1:
+            case greet1:
                 break;
-            case 2:
+            case even2:
                 Even.evenGame();
                 break;
-            case 3:
+            case calc3:
                 Calc.calcGame();
                 break;
-            case 4:
+            case gcd4:
                 GCD.gcdGame();
                 break;
             default:
