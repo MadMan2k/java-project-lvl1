@@ -78,6 +78,9 @@ public class Engine {
             case "gcd":
                 System.out.println("Find the greatest common divisor of given numbers.");
                 break;
+            case "progression":
+                System.out.println("What number is missing in the progression?");
+                break;
             default :
                 printError();
         }
