@@ -11,6 +11,7 @@ public class Prime {
     public static void primeGame() {
         String resultString = "";
         Engine.printRules("prime");
+        final int threeIsNotMagicNumber = 3;
 
             for (int i = 0; i < Engine.getNumberOfTries(); i++) {
             int randomNum = Engine.getRandomNum().nextInt(Engine.getMaxRandom());
@@ -19,7 +20,7 @@ public class Prime {
             if (randomNum == 0 || randomNum == 1) {
                 resultString = "no";
             }
-            if (randomNum == 2 || randomNum == 3) {
+            if (randomNum == 2 || randomNum == threeIsNotMagicNumber) {
                 resultString = "yes";
             }
             for (int k = 2; k <= randomNum / 2; k++) {
