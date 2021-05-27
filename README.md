@@ -10,3 +10,5 @@ ASCIINEMA (Even) : https://asciinema.org/a/oWoQ5Cr90mZK7JbBnLWIk11HQ
 ASCIINEMA (Calc) : https://asciinema.org/a/EjOHGoZGH8fhXNtAoBrNUWMOl
 
 ASCIINEMA (GCD) : https://asciinema.org/a/U3m7SCxR8M5FMrdCZCENng40B
+
+ASCIINEMA (Progression) : https://asciinema.org/a/9tqmHmtvd4aLLs8TiiyOQlcoL
