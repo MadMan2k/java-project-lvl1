@@ -4,10 +4,6 @@ import hexlet.code.Engine;
 
 public class Prime {
 
-//    public static void main(String[] args) {
-//        primeGame();
-//    }
-
     public static void primeGame() {
         String resultString = "";
         Engine.printRules("prime");
