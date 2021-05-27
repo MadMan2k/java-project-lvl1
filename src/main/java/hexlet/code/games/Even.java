@@ -10,10 +10,10 @@ public class Even {
         String resultString = "";
         Engine.printRules("even");
         for (int i = 0; i < Engine.getNumberOfTries(); i++) {
-            int[] showRandomNum = Engine.showRandomNum();
+            int randomNum = Engine.getRandomNum().nextInt(Engine.getMaxRandom());
             Engine.printQuestion();
-            System.out.println(showRandomNum[0]);
-            switch (showRandomNum[0] % 2) {
+            System.out.println(randomNum);
+            switch (randomNum % 2) {
                 case 0:
                     resultString = "yes";
                     break;

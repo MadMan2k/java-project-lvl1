@@ -9,25 +9,25 @@ public class Calc {
         int resultInt = 0;
         Engine.printRules("calc");
         for (int i = 0; i < Engine.getNumberOfTries(); i++) {
-            int[] showRandomNum = Engine.showRandomNum();
+            int[] randomNumArray = Engine.showRandomNum();
             int showRandomOperator = Engine.getRandomNum().nextInt(numberOfOperators);
             switch (showRandomOperator) {   // 0 ==> sum ; 1 ==> subtraction ; 2 ==>  product ; default ==> error
                 case 0:
-                    resultInt = showRandomNum[0] + showRandomNum[1];
+                    resultInt = randomNumArray[0] + randomNumArray[1];
                     Engine.printQuestion();
-                    System.out.println(showRandomNum[0] + " + " + showRandomNum[1]);
+                    System.out.println(randomNumArray[0] + " + " + randomNumArray[1]);
                     break;
                 case 1:
-                    resultInt = showRandomNum[0] - showRandomNum[1];
+                    resultInt = randomNumArray[0] - randomNumArray[1];
                     Engine.printQuestion();
-                    System.out.println(showRandomNum[0] + " - " + showRandomNum[1]);
+                    System.out.println(randomNumArray[0] + " - " + randomNumArray[1]);
                     break;
                 case 2: // The difficulty decreased to one-fifth of its original level for easier game
-                    resultInt = (showRandomNum[0] / decreaseDifficultyCalc)
-                            * (showRandomNum[1] / decreaseDifficultyCalc);
+                    resultInt = (randomNumArray[0] / decreaseDifficultyCalc)
+                            * (randomNumArray[1] / decreaseDifficultyCalc);
                     Engine.printQuestion();
-                    System.out.println((showRandomNum[0] / decreaseDifficultyCalc) + " * "
-                            + (showRandomNum[1] / decreaseDifficultyCalc));
+                    System.out.println((randomNumArray[0] / decreaseDifficultyCalc) + " * "
+                            + (randomNumArray[1] / decreaseDifficultyCalc));
                     break;
                 default :
                     Engine.printError();

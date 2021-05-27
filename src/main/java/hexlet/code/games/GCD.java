@@ -7,11 +7,11 @@ public class GCD {
     public static void gcdGame() {
         Engine.printRules("gcd");
         for (int i = 0; i < Engine.getNumberOfTries(); i++) {
-            int[] showRandomNum = Engine.showRandomNum();
+            int[] randomNumArray = Engine.showRandomNum();
             Engine.printQuestion();
-            System.out.println(showRandomNum[0] + " " + showRandomNum[1]);
+            System.out.println(randomNumArray[0] + " " + randomNumArray[1]);
             int answer = Engine.intYourAnswer();
-            if (!Engine.verifyAnswerInt(gcdByEuclid(showRandomNum[0], showRandomNum[1]), answer)) {
+            if (!Engine.verifyAnswerInt(gcdByEuclid(randomNumArray[0], randomNumArray[1]), answer)) {
                 break;
             }
         }
