@@ -28,19 +28,19 @@ public class Progression {
             for (int m = 0; m < indexOfHiddenNum; m++) {
                 System.out.print(progressionBeforeHidden[m] + " ");
             }
-            System.out.print(".. ");
-//            if (indexOfHiddenNum == progressionSize - 1) {
-//                System.out.println("..");
-//            } else {
-//                System.out.print(".. ");
-//            }
+//            System.out.print(".. ");
+            if (indexOfHiddenNum == progressionSize - 1) {
+                System.out.println("..");
+            } else {
+                System.out.print(".. ");
+            }
             for (int n = 0; n < progressionSize - indexOfHiddenNum - 1; n++) {
-                System.out.print(progressionAfterHidden[n] + " ");
-//                if (n == progressionSize - indexOfHiddenNum - 2) {
-//                    System.out.println(progressionAfterHidden[n]);
-//                } else {
-//                    System.out.print(progressionAfterHidden[n] + " ");
-//                }
+//                System.out.print(progressionAfterHidden[n] + " ");
+                if (n == progressionSize - indexOfHiddenNum - 2) {
+                    System.out.println(progressionAfterHidden[n]);
+                } else {
+                    System.out.print(progressionAfterHidden[n] + " ");
+                }
             }
             System.out.println();
             int answer = Engine.intYourAnswer();
