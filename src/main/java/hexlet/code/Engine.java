@@ -90,7 +90,7 @@ public class Engine {
     }
 
     public static void printQuestion() {
-        System.out.print("Question : ");
+        System.out.print("Question: ");
     }
 
     public static String stringYourAnswer() {
