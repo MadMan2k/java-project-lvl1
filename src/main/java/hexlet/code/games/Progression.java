@@ -24,10 +24,10 @@ public class Progression {
             }
             int[] progressionBeforeHidden = Arrays.copyOfRange(progression, 0, indexOfHiddenNum);
             int[] progressionAfterHidden = Arrays.copyOfRange(progression, indexOfHiddenNum + 1, progressionSize);
+            Engine.printQuestion();
             for (int m = 0; m < indexOfHiddenNum; m++) {
                 System.out.print(progressionBeforeHidden[m] + " ");
             }
-            Engine.printQuestion();
             System.out.print(".. ");
 //            if (indexOfHiddenNum == progressionSize - 1) {
 //                System.out.println("..");
