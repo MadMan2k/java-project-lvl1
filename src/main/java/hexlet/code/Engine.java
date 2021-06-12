@@ -6,6 +6,7 @@ import java.util.Scanner;
 public class Engine {
 
     private static int counterOfCorrectAnswers = 0;
+    static final Scanner SET_ANSWER = new Scanner(System.in);
 
     public static int getMaxRandom() {
         final int maxRandom = 99;
@@ -67,44 +68,18 @@ public class Engine {
         }
     }
 
-    public static void printRules(String selectedGame) {
-        switch (selectedGame) {
-            case "even":
-                System.out.println("Answer 'yes' if number even otherwise answer 'no'.");
-                break;
-            case "calc":
-                System.out.println("What is the result of the expression?");
-                break;
-            case "gcd":
-                System.out.println("Find the greatest common divisor of given numbers.");
-                break;
-            case "progression":
-                System.out.println("What number is missing in the progression?");
-                break;
-            case "prime":
-                System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
-                break;
-            default :
-                printError();
-        }
-    }
-
     public static void printQuestion() {
         System.out.print("Question: ");
     }
 
     public static String stringYourAnswer() {
-        Scanner setAnswer = new Scanner(System.in);
         System.out.print("Your answer : ");
-        String answer = setAnswer.nextLine();
-        return answer;
+        return SET_ANSWER.nextLine();
     }
 
     public static int intYourAnswer() {
-        Scanner setAnswer = new Scanner(System.in);
         System.out.print("Your answer : ");
-        int answer = Integer.parseInt(setAnswer.nextLine());
-        return answer;
+        return Integer.parseInt(SET_ANSWER.nextLine());
     }
 
     public static void printAnswerIsCorrect() {
@@ -112,21 +87,19 @@ public class Engine {
     }
 
     public static void printAnswerIsWrongInt(int result, int answer) {
-        System.out.println("'" + answer + "'" + " is wrong answer ;(. Correct answer was "
-                + "'" + result + "'");
+        System.out.println(String.format("'%s' is wrong answer ;(. Correct answer was '%s'", answer, result));
     }
 
     public static void printAnswerIsWrongString(String result, String answer) {
-        System.out.println("'" + answer + "'" + " is wrong answer ;(. Correct answer was "
-                + "'" + result + "'");
+        System.out.println(String.format("'%s' is wrong answer ;(. Correct answer was '%s'", answer, result));
     }
 
     public static void printLetsTryAgain() {
-        System.out.println("Let's try again, " + Cli.getSayMyNameSong() + "!");
+        System.out.println("Let's try again, " + Cli.name + "!");
     }
 
     public static void printCongartulations() {
-        System.out.println("Congratulations, " + Cli.getSayMyNameSong() + "!");
+        System.out.println("Congratulations, " + Cli.name + "!");
     }
 
     public static void printError() {

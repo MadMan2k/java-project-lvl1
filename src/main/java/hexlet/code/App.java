@@ -27,10 +27,12 @@ public class App {
         availableChoice[progression5] = "5 - Progression";
         availableChoice[prime6] = "6 - Prime";
         System.out.println("Please enter the game number and press Enter.");
-
-        for (int i = 1; i < availableChoice.length; i++) {
-            System.out.println(availableChoice[i]);
-        }
+        System.out.println(availableChoice[greet1]);
+        System.out.println(availableChoice[even2]);
+        System.out.println(availableChoice[calc3]);
+        System.out.println(availableChoice[gcd4]);
+        System.out.println(availableChoice[progression5]);
+        System.out.println(availableChoice[prime6]);
         System.out.println(availableChoice[exit0]);
         Scanner setGame = new Scanner(System.in);
         System.out.print("Your choice : ");

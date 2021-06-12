@@ -6,7 +6,8 @@ public class Prime {
 
     public static void primeGame() {
         String resultString = "";
-        Engine.printRules("prime");
+        String rules = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
+        System.out.println(rules);
         final int threeIsNotMagicNumber = 3;
 
             for (int i = 0; i < Engine.getNumberOfTries(); i++) {

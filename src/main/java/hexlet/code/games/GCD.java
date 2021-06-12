@@ -5,7 +5,8 @@ import hexlet.code.Engine;
 public class GCD {
 
     public static void gcdGame() {
-        Engine.printRules("gcd");
+        String rules = "Find the greatest common divisor of given numbers.";
+        System.out.println(rules);
         for (int i = 0; i < Engine.getNumberOfTries(); i++) {
             int[] randomNumArray = Engine.showRandomNum();
             Engine.printQuestion();

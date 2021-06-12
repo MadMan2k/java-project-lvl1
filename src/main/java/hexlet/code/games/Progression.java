@@ -10,7 +10,8 @@ public class Progression {
         final int progressionSize = 10;
         final int maxCommonDifference = 10;
         int[] progression = new int[progressionSize];
-        Engine.printRules("progression");
+        String rules = "What number is missing in the progression?";
+        System.out.println(rules);
         for (int i = 0; i < Engine.getNumberOfTries(); i++) {
             int startNumOfProgression = Engine.getRandomNum().nextInt(Engine.getMaxRandom());
             int commonDifference = Engine.getRandomNum().nextInt(maxCommonDifference);

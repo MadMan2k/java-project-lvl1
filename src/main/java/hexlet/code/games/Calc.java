@@ -7,7 +7,8 @@ public class Calc {
         final int numberOfOperators = 3;
         final int decreaseDifficultyCalc = 5;
         int resultInt = 0;
-        Engine.printRules("calc");
+        String rules = "What is the result of the expression?";
+        System.out.println(rules);
         for (int i = 0; i < Engine.getNumberOfTries(); i++) {
             int[] randomNumArray = Engine.showRandomNum();
             int showRandomOperator = Engine.getRandomNum().nextInt(numberOfOperators);
