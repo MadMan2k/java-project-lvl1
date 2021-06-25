@@ -10,8 +10,6 @@ import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) {
-        final int numberOfChoice = 7;
-        String[] availableChoice = new String[numberOfChoice];
         final int exit0 = 0;
         final int greet1 = 1;
         final int even2 = 2;
@@ -19,21 +17,14 @@ public class App {
         final int gcd4 = 4;
         final int progression5 = 5;
         final int prime6 = 6;
-        availableChoice[exit0] = "0 - Exit";
-        availableChoice[greet1] = "1 - Greet";
-        availableChoice[even2] = "2 - Even";
-        availableChoice[calc3] = "3 - Calc";
-        availableChoice[gcd4] = "4 - GCD";
-        availableChoice[progression5] = "5 - Progression";
-        availableChoice[prime6] = "6 - Prime";
+        System.out.println("0 - Exit");
+        System.out.println("1 - Greet");
+        System.out.println("2 - Even");
+        System.out.println("3 - Calc");
+        System.out.println("4 - GCD");
+        System.out.println("5 - Progression");
+        System.out.println("6 - Prime");
         System.out.println("Please enter the game number and press Enter.");
-        System.out.println(availableChoice[greet1]);
-        System.out.println(availableChoice[even2]);
-        System.out.println(availableChoice[calc3]);
-        System.out.println(availableChoice[gcd4]);
-        System.out.println(availableChoice[progression5]);
-        System.out.println(availableChoice[prime6]);
-        System.out.println(availableChoice[exit0]);
         Scanner setGame = new Scanner(System.in);
         System.out.print("Your choice : ");
         int selectedGame = setGame.nextInt();

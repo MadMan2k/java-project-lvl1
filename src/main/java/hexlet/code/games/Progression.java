@@ -5,13 +5,14 @@ import hexlet.code.Engine;
 import java.util.Arrays;
 
 public class Progression {
+    private static final String RULES = "What number is missing in the progression?";
 
     public static void progressionGame() {
         final int progressionSize = 10;
         final int maxCommonDifference = 10;
         int[] progression = new int[progressionSize];
-        String rules = "What number is missing in the progression?";
-        System.out.println(rules);
+
+        System.out.println(RULES);
         for (int i = 0; i < Engine.getNumberOfTries(); i++) {
             int startNumOfProgression = Engine.getRandomNum().nextInt(Engine.getMaxRandom());
             int commonDifference = Engine.getRandomNum().nextInt(maxCommonDifference);
@@ -43,7 +44,9 @@ public class Progression {
             }
             System.out.println();
             int answer = Engine.intYourAnswer();
-            if (!Engine.verifyAnswerInt(progression[indexOfHiddenNum], answer)) {
+            String progressionString = String.valueOf(progression[indexOfHiddenNum]);
+            String answerString = String.valueOf(answer);
+            if (!Engine.verifyAnswer(progressionString, answerString)) {
                 break;
             }
         }

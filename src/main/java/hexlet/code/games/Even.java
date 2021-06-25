@@ -3,13 +3,10 @@ package hexlet.code.games;
 import hexlet.code.Engine;
 
 public class Even {
-    /**
-     * Even game class.
-     */
+    private static final String RULES = "Answer 'yes' if number even otherwise answer 'no'.";
     public static void evenGame() {
         String resultString = "";
-        String rules = "Answer 'yes' if number even otherwise answer 'no'.";
-        System.out.println(rules);
+        System.out.println(RULES);
         for (int i = 0; i < Engine.getNumberOfTries(); i++) {
             int randomNum = Engine.getRandomNum().nextInt(Engine.getMaxRandom());
             Engine.printQuestion();
@@ -25,7 +22,7 @@ public class Even {
                     Engine.printError();
             }
             String answer = Engine.stringYourAnswer();
-            if (!Engine.verifyAnswerString(resultString, answer)) {
+            if (!Engine.verifyAnswer(resultString, answer)) {
                 break;
             }
         }

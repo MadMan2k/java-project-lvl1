@@ -44,25 +44,13 @@ public class Engine {
         return counterOfCorrectAnswers;
     }
 
-    public static boolean verifyAnswerInt(int result, int answer) {
-        if (result == answer) {
-            printAnswerIsCorrect();
-            countCorrectAnswer();
-            return true;
-        } else {
-            printAnswerIsWrongInt(result, answer);
-            printLetsTryAgain();
-            return false;
-        }
-    }
-
-    public static boolean verifyAnswerString(String result, String answer) {
+    public static boolean verifyAnswer(String result, String answer) {
         if (answer.equals(result)) {
             printAnswerIsCorrect();
             countCorrectAnswer();
             return true;
         } else {
-            printAnswerIsWrongString(result, answer);
+            printAnswerIsWrong(result, answer);
             printLetsTryAgain();
             return false;
         }
@@ -86,11 +74,7 @@ public class Engine {
         System.out.println("Correct!");
     }
 
-    public static void printAnswerIsWrongInt(int result, int answer) {
-        System.out.println(String.format("'%s' is wrong answer ;(. Correct answer was '%s'", answer, result));
-    }
-
-    public static void printAnswerIsWrongString(String result, String answer) {
+    public static void printAnswerIsWrong(String result, String answer) {
         System.out.println(String.format("'%s' is wrong answer ;(. Correct answer was '%s'", answer, result));
     }
 

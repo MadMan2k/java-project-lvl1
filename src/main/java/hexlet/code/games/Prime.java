@@ -3,11 +3,10 @@ package hexlet.code.games;
 import hexlet.code.Engine;
 
 public class Prime {
-
+    private static final String RULES = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
     public static void primeGame() {
         String resultString = "";
-        String rules = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
-        System.out.println(rules);
+        System.out.println(RULES);
         final int threeIsNotMagicNumber = 3;
 
             for (int i = 0; i < Engine.getNumberOfTries(); i++) {
@@ -29,7 +28,7 @@ public class Prime {
                 }
             }
             String answer = Engine.stringYourAnswer();
-            if (!Engine.verifyAnswerString(resultString, answer)) {
+            if (!Engine.verifyAnswer(resultString, answer)) {
                 break;
             }
         }
