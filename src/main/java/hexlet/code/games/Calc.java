@@ -43,15 +43,15 @@ public class Calc {
         Engine.doWeHaveAWinner(Engine.getCounterOfCorrectAnswers(), Engine.getNumberOfTries());
     }
 
-    public static int sum (int firstNumber, int secondNumber) {
+    public static int sum(int firstNumber, int secondNumber) {
         return firstNumber + secondNumber;
     }
 
-    public static int subtraction (int firstNumber, int secondNumber) {
+    public static int subtraction(int firstNumber, int secondNumber) {
         return firstNumber - secondNumber;
     }
 
-    public static int productDifficultyDecreased (int firstNumber, int secondNumber) {
+    public static int productDifficultyDecreased(int firstNumber, int secondNumber) {
         return (firstNumber / DECREASE_DIFFICULTY_CALC) * (secondNumber / DECREASE_DIFFICULTY_CALC);
     }
 }
