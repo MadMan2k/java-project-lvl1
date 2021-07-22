@@ -5,6 +5,16 @@ import java.util.Scanner;
 
 public class Engine {
 
+    private static String name;
+
+    public static void setName(String scannerName) {
+        name = scannerName;
+    }
+
+    public static String getName() {
+        return name;
+    }
+
     private static int counterOfCorrectAnswers = 0;
     static final Scanner SET_ANSWER = new Scanner(System.in);
 
@@ -23,7 +33,7 @@ public class Engine {
         return randomNum;
     }
 
-    public static int[] showRandomNum() {
+    public static int[] showRandomNumArray() {
         int[] showRandomNum = new int[2];
         showRandomNum[0] = Engine.getMinRandom() + Engine.getRandomNum().nextInt(Engine.getMaxRandom());
         showRandomNum[1] = Engine.getMinRandom() + Engine.getRandomNum().nextInt(Engine.getMaxRandom());
@@ -79,11 +89,11 @@ public class Engine {
     }
 
     public static void printLetsTryAgain() {
-        System.out.println("Let's try again, " + Cli.name + "!");
+        System.out.println("Let's try again, " + Engine.getName() + "!");
     }
 
     public static void printCongartulations() {
-        System.out.println("Congratulations, " + Cli.name + "!");
+        System.out.println("Congratulations, " + Engine.getName() + "!");
     }
 
     public static void printError() {
@@ -94,5 +104,18 @@ public class Engine {
         if (correctAnswer == numberOfTries) {
             printCongartulations();
         }
+    }
+
+    public static void gameCore(String rules, String[] gameQuestions, String[] rightAnswers) {
+        System.out.println(rules);
+        for (int i = 0; i < Engine.getNumberOfTries(); i++) {
+            Engine.printQuestion();
+            System.out.println(gameQuestions[i]);
+            String playerAnswer = Engine.stringYourAnswer();
+            if (!Engine.verifyAnswer(rightAnswers[i], playerAnswer)) {
+                break;
+            }
+        }
+        Engine.doWeHaveAWinner(Engine.getCounterOfCorrectAnswers(), Engine.getNumberOfTries());
     }
 }
