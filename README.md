@@ -3,7 +3,7 @@
 
 ![Java CI](https://github.com/MadMan2k/java-project-lvl1/workflows/Java%20CI/badge.svg)
 
-[![Maintainability](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://github.com/MadMan2k/java-project-lvl1)
+[![Maintainability](https://api.codeclimate.com/v1/badges/52c692d59e00bb065757/maintainability)](https://codeclimate.com/github/MadMan2k/java-project-lvl1/maintainability)
 
 ASCIINEMA (Even) : https://asciinema.org/a/oWoQ5Cr90mZK7JbBnLWIk11HQ
 
