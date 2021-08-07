@@ -12,3 +12,6 @@ src⁩/⁨main⁩/⁨java⁩/⁨hexlet⁩/⁨code/App.class
 
 # Ignore .idea
 .idea
+
+# testdir
+.testdir
