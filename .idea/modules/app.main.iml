@@ -5,4 +5,9 @@
       <map />
     </option>
   </component>
+  <component name="NewModuleRootManager">
+    <output url="file://$MODULE_DIR$/../../build/classes/java/main" />
+    <exclude-output />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
 </module>
