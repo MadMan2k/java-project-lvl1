@@ -56,7 +56,6 @@ public class Progression {
 //    progressionGame();
 //}
 
-
     public static void progressionGame() {
         String[] gameQuestions = new String[Engine.getNumberOfTries()];
         String[] rightAnswers = new String[Engine.getNumberOfTries()];
