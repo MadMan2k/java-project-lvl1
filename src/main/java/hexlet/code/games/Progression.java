@@ -52,6 +52,10 @@ public class Progression {
 //        }
 //        Engine.doWeHaveAWinner(Engine.getCounterOfCorrectAnswers(), Engine.getNumberOfTries());
 //    }
+public static void main(String[] args) {
+    progressionGame();
+}
+
 
     public static void progressionGame() {
         String[] gameQuestions = new String[Engine.getNumberOfTries()];
@@ -62,7 +66,8 @@ public class Progression {
         for (int i = 0; i < Engine.getNumberOfTries(); i++) {
             int startNumOfProgression = Engine.getRandomNum().nextInt(Engine.getMaxRandom());
             int commonDifference = Engine.getRandomNum().nextInt(maxCommonDifference);
-            int indexOfHiddenNum = Engine.getRandomNum().nextInt(progressionSize);
+//            int indexOfHiddenNum = Engine.getRandomNum().nextInt(progressionSize);
+            int indexOfHiddenNum = 9;
             for (int k = 0; k < progressionSize; k++) {
                 if (k == 0) {
                     progression[k] = startNumOfProgression;
@@ -81,6 +86,8 @@ public class Progression {
             }
             if (indexOfHiddenNum == progressionSize - 1) {
                 gameQuestions[i] = gameQuestions[i] + "..";
+            } else if (indexOfHiddenNum == 0) {
+                gameQuestions[i] = ".. ";
             } else {
                 gameQuestions[i] = gameQuestions[i] + ".. ";
             }
