@@ -5,7 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b7e5475d-cbca-4ba6-8990-499c22bb916d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/hexlet/code/games/Progression.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hexlet/code/games/Progression.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.8.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.8.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
