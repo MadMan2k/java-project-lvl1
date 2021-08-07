@@ -12,7 +12,11 @@ src⁩/⁨main⁩/⁨java⁩/⁨hexlet⁩/⁨code/App.class
 
 # Ignore .idea
 <<<<<<< HEAD
+<<<<<<< HEAD
 .idea/
+=======
+.idea/⁩
+>>>>>>> parent of e8dc236 (test)
 =======
 .idea/⁩
 >>>>>>> parent of e8dc236 (test)
