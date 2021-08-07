@@ -11,4 +11,8 @@ src⁩/⁨main⁩/⁨java⁩/⁨hexlet⁩/⁨code/App.class
 .DS_Store
 
 # Ignore .idea
+<<<<<<< HEAD
 .idea/
+=======
+.idea/⁩
+>>>>>>> parent of e8dc236 (test)
