@@ -32,25 +32,30 @@ public class Even {
     public static void evenGame() {
         String[] gameQuestions = new String[Engine.NUMBER_OF_TRIES];
         String[] rightAnswers = new String[Engine.NUMBER_OF_TRIES];
-        int[] randomNums = new int[Engine.NUMBER_OF_TRIES];
-        for (int i = 0; i < randomNums.length; i++) {
-            randomNums[i] = Engine.getRandomNum().nextInt(Engine.getMaxRandom());
-        }
+        int[] randomNums = getRandomNums(Engine.NUMBER_OF_TRIES);
         for (int j = 0; j < gameQuestions.length; j++) {
             gameQuestions[j] = String.valueOf(randomNums[j]);
         }
         for (int k = 0; k < rightAnswers.length; k++) {
             switch (randomNums[k] % 2) {
                 case 0:
-                    rightAnswers[k] = "yes";
+                    rightAnswers[k] = Engine.YES_TEXT;
                     break;
                 case 1:
-                    rightAnswers[k] = "no";
+                    rightAnswers[k] = Engine.NO_TEXT;
                     break;
                 default:
                     Engine.printError();
             }
         }
         Engine.runGame(RULES, gameQuestions, rightAnswers);
+    }
+
+    private static int[] getRandomNums(int numberOfValues) {
+        int[] randomNums = new int[numberOfValues];
+        for (int i = 0; i < randomNums.length; i++) {
+            randomNums[i] = Engine.getRandomNum().nextInt(Engine.getMaxRandom());
+        }
+        return randomNums;
     }
 }
