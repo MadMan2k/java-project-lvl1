@@ -31,7 +31,7 @@ public class App {
         System.out.println();
         if (selectedGame != exit0) {
             System.out.println("Welcome to the Brain Games!");
-            Cli.setName();
+            Cli.setPlayerName();
 
             switch (selectedGame) {
                 case greet1:

@@ -4,13 +4,24 @@ import java.util.Scanner;
 
 public class Cli {
 //    static String name;
-    public static String setName() {
-        Scanner setName = new Scanner(System.in);
+    public static void printMayIHaveYourName() {
         System.out.print("May I have your name? ");
-        Engine.setName(setName.nextLine());
-//        Engine.name = setName.nextLine();
-//        name = setName.nextLine();
+    }
+
+    public static void printHelloPlayer() {
         System.out.println("Hello, " + Engine.getName() + "!");
-        return Engine.getName();
+    }
+
+    public static String getNameFromPlayer() {
+        Scanner playerName = new Scanner(System.in);
+        return playerName.nextLine();
+    }
+
+    public static void setPlayerName() {
+        printMayIHaveYourName();
+        String playerName = getNameFromPlayer();
+        Engine.setName(playerName);
+        printHelloPlayer();
+//        return Engine.getName();
     }
 }
