@@ -25,7 +25,7 @@ public class Engine {
         return MAX_OF_RANDOM;
     }
 
-    public static int getMinRandom() {
+    private static int getMinRandom() {
         return  MIN_OF_RANDOM;
     }
 
@@ -46,15 +46,15 @@ public class Engine {
 //        return numberOfTries;
 //    }
 
-    public static void countCorrectAnswer() {
+    private static void countCorrectAnswer() {
         counterOfCorrectAnswers++;
     }
 
-    public static int getCounterOfCorrectAnswers() {
+    private static int getCounterOfCorrectAnswers() {
         return counterOfCorrectAnswers;
     }
 
-    public static boolean verifyAnswer(String result, String answer) {
+    private static boolean verifyAnswer(String result, String answer) {
         if (answer.equals(result)) {
             printAnswerIsCorrect();
             countCorrectAnswer();
@@ -66,33 +66,33 @@ public class Engine {
         }
     }
 
-    public static void printQuestion() {
+    private static void printQuestion() {
         System.out.print("Question: ");
     }
 
-    public static String stringYourAnswer() {
+    private static String stringYourAnswer() {
         System.out.print("Your answer : ");
         return SET_ANSWER.nextLine();
     }
 
-    public static int intYourAnswer() {
-        System.out.print("Your answer : ");
-        return Integer.parseInt(SET_ANSWER.nextLine());
-    }
+//    public static int intYourAnswer() {
+//        System.out.print("Your answer : ");
+//        return Integer.parseInt(SET_ANSWER.nextLine());
+//    }
 
-    public static void printAnswerIsCorrect() {
+    private static void printAnswerIsCorrect() {
         System.out.println("Correct!");
     }
 
-    public static void printAnswerIsWrong(String result, String answer) {
+    private static void printAnswerIsWrong(String result, String answer) {
         System.out.println(String.format("'%s' is wrong answer ;(. Correct answer was '%s'", answer, result));
     }
 
-    public static void printLetsTryAgain() {
+    private static void printLetsTryAgain() {
         System.out.println("Let's try again, " + Engine.getName() + "!");
     }
 
-    public static void printCongartulations() {
+    private static void printCongartulations() {
         System.out.println("Congratulations, " + Engine.getName() + "!");
     }
 
@@ -100,17 +100,17 @@ public class Engine {
         System.out.println("Error -1");
     }
 
-    public static void doWeHaveAWinner(int correctAnswer, int numberOfTries) {
+    private static void doWeHaveAWinner(int correctAnswer, int numberOfTries) {
         if (correctAnswer == numberOfTries) {
             printCongartulations();
         }
     }
 
-    public static void printRules(String rules) {
+    private static void printRules(String rules) {
         System.out.println(rules);
     }
 
-    public static void printGameQuestion(String gameQuestion) {
+    private static void printGameQuestion(String gameQuestion) {
         System.out.println(gameQuestion);
     }
 
