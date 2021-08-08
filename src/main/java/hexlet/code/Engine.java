@@ -9,6 +9,8 @@ public class Engine {
     private static final int MIN_OF_RANDOM = 1;
     private static final int MAX_OF_RANDOM = 99;
     public static final int NUMBER_OF_TRIES = 3;
+    public static final String YES_TEXT = "yes";
+    public static final String NO_TEXT = "no";
 
     public static void setName(String scannerName) {
         name = scannerName;
