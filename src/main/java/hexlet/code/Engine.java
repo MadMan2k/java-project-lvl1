@@ -6,6 +6,9 @@ import java.util.Scanner;
 public class Engine {
 
     private static String name;
+    private static final int MIN_OF_RANDOM = 1;
+    private static final int MAX_OF_RANDOM = 99;
+    public static final int NUMBER_OF_TRIES = 3;
 
     public static void setName(String scannerName) {
         name = scannerName;
@@ -19,13 +22,11 @@ public class Engine {
     static final Scanner SET_ANSWER = new Scanner(System.in);
 
     public static int getMaxRandom() {
-        final int maxRandom = 99;
-        return maxRandom;
+        return MAX_OF_RANDOM;
     }
 
     public static int getMinRandom() {
-        final int minRandom = 1;
-        return minRandom;
+        return  MIN_OF_RANDOM;
     }
 
     public static Random getRandomNum() {
@@ -33,18 +34,17 @@ public class Engine {
         return randomNum;
     }
 
-    public static int[] showRandomNumArray() {
-        int[] showRandomNum = new int[2];
-        showRandomNum[0] = Engine.getMinRandom() + Engine.getRandomNum().nextInt(Engine.getMaxRandom());
-        showRandomNum[1] = Engine.getMinRandom() + Engine.getRandomNum().nextInt(Engine.getMaxRandom());
-        return showRandomNum;
+    public static int[] getRandomNumArray() {
+        int[] randomNumArray = new int[2];
+        randomNumArray[0] = getMinRandom() + getRandomNum().nextInt(getMaxRandom());
+        randomNumArray[1] = getMinRandom() + getRandomNum().nextInt(getMaxRandom());
+        return randomNumArray;
     }
 
     public static int getNumberOfTries() {
         final int numberOfTries = 3;
         return numberOfTries;
     }
-
 
     public static void countCorrectAnswer() {
         counterOfCorrectAnswers++;

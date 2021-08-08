@@ -50,7 +50,7 @@ public class Calc {
         int[] resultInt = new int[Engine.getNumberOfTries()];
         int[][] randomNumArrays = new int[Engine.getNumberOfTries()][2];
         for (int i = 0; i < randomNumArrays.length; i++) {
-            randomNumArrays[i] = Engine.showRandomNumArray();
+            randomNumArrays[i] = Engine.getRandomNumArray();
         }
         int[] showRandomOperators = new int[Engine.getNumberOfTries()];
         for (int j = 0; j < showRandomOperators.length; j++) {
