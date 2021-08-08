@@ -4,6 +4,9 @@ import java.util.Scanner;
 
 public class Cli {
 //    static String name;
+//    public static String getNameFromPlayer() {
+//
+//    }
     public static String setName() {
         Scanner setName = new Scanner(System.in);
         System.out.print("May I have your name? ");
