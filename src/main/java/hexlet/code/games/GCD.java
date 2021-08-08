@@ -31,7 +31,7 @@ public class GCD {
                     + String.valueOf(randomNumArrays[i][1]);
             rightAnswers[i] = String.valueOf(gcdByEuclid(randomNumArrays[i][0], randomNumArrays[i][1]));
         }
-        Engine.gameCore(RULES, gameQuestions, rightAnswers);
+        Engine.runGame(RULES, gameQuestions, rightAnswers);
     }
 
     public static int gcdByEuclid(int num1, int num2) {

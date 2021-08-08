@@ -106,11 +106,19 @@ public class Engine {
         }
     }
 
-    public static void gameCore(String rules, String[] gameQuestions, String[] rightAnswers) {
+    public static void printRules(String rules) {
         System.out.println(rules);
+    }
+
+    public static void printGameQuestion(String gameQuestion) {
+        System.out.println(gameQuestion);
+    }
+
+    public static void runGame(String rules, String[] gameQuestions, String[] rightAnswers) {
+        printRules(rules);
         for (int i = 0; i < Engine.getNumberOfTries(); i++) {
             Engine.printQuestion();
-            System.out.println(gameQuestions[i]);
+            printGameQuestion(gameQuestions[i]);
             String playerAnswer = Engine.stringYourAnswer();
             if (!Engine.verifyAnswer(rightAnswers[i], playerAnswer)) {
                 break;

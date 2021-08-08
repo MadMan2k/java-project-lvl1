@@ -98,6 +98,6 @@ public class Progression {
             }
             rightAnswers[i] = String.valueOf(progression[indexOfHiddenNum]);
         }
-        Engine.gameCore(RULES, gameQuestions, rightAnswers);
+        Engine.runGame(RULES, gameQuestions, rightAnswers);
     }
 }

@@ -51,6 +51,6 @@ public class Even {
                     Engine.printError();
             }
         }
-        Engine.gameCore(RULES, gameQuestions, rightAnswers);
+        Engine.runGame(RULES, gameQuestions, rightAnswers);
     }
 }

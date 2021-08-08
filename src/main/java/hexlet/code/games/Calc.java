@@ -80,7 +80,7 @@ public class Calc {
                     Engine.printError();
             }
         }
-        Engine.gameCore(RULES, gameQuestions, rightAnswers);
+        Engine.runGame(RULES, gameQuestions, rightAnswers);
     }
 
     public static int sum(int firstNumber, int secondNumber) {

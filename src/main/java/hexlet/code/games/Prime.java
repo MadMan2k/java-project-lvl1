@@ -58,7 +58,7 @@ public class Prime {
                 }
             }
         }
-        Engine.gameCore(RULES, gameQuestions, rightAnswers);
+        Engine.runGame(RULES, gameQuestions, rightAnswers);
 
     }
 }
