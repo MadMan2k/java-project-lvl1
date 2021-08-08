@@ -32,8 +32,7 @@ public class Engine {
     }
 
     public static Random getRandomNum() {
-        Random randomNum = new Random();
-        return randomNum;
+        return new Random();
     }
 
     public static int[] getRandomNumArray() {
@@ -42,11 +41,6 @@ public class Engine {
         randomNumArray[1] = getMinRandom() + getRandomNum().nextInt(getMaxRandom());
         return randomNumArray;
     }
-
-//    public static int getNumberOfTries() {
-//        final int numberOfTries = 3;
-//        return numberOfTries;
-//    }
 
     private static void countCorrectAnswer() {
         counterOfCorrectAnswers++;
@@ -77,11 +71,6 @@ public class Engine {
         return SET_ANSWER.nextLine();
     }
 
-//    public static int intYourAnswer() {
-//        System.out.print("Your answer : ");
-//        return Integer.parseInt(SET_ANSWER.nextLine());
-//    }
-
     private static void printAnswerIsCorrect() {
         System.out.println("Correct!");
     }
@@ -102,8 +91,8 @@ public class Engine {
         System.out.println("Error -1");
     }
 
-    private static void doWeHaveAWinner(int correctAnswer, int numberOfTries) {
-        if (correctAnswer == numberOfTries) {
+    private static void doWeHaveAWinner(int correctAnswer) {
+        if (correctAnswer == Engine.NUMBER_OF_TRIES) {
             printCongartulations();
         }
     }
@@ -126,6 +115,6 @@ public class Engine {
                 break;
             }
         }
-        Engine.doWeHaveAWinner(Engine.getCounterOfCorrectAnswers(), Engine.NUMBER_OF_TRIES);
+        Engine.doWeHaveAWinner(Engine.getCounterOfCorrectAnswers());
     }
 }

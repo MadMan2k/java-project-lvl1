@@ -3,7 +3,6 @@ package hexlet.code;
 import java.util.Scanner;
 
 public class Cli {
-//    static String name;
     public static void printMayIHaveYourName() {
         System.out.print("May I have your name? ");
     }
@@ -22,6 +21,5 @@ public class Cli {
         String playerName = getNameFromPlayer();
         Engine.setName(playerName);
         printHelloPlayer();
-//        return Engine.getName();
     }
 }
