@@ -60,19 +60,9 @@ public class Progression {
         String[] gameQuestions = new String[Engine.NUMBER_OF_TRIES];
         String[] rightAnswers = new String[Engine.NUMBER_OF_TRIES];
         final int progressionSize = 10;
-        final int maxCommonDifference = 10;
-        int[] progression = new int[progressionSize];
         for (int i = 0; i < Engine.NUMBER_OF_TRIES; i++) {
-            int startNumOfProgression = Engine.getRandomNum().nextInt(Engine.getMaxRandom());
-            int commonDifference = Engine.getRandomNum().nextInt(maxCommonDifference);
             int indexOfHiddenNum = Engine.getRandomNum().nextInt(progressionSize);
-            for (int k = 0; k < progressionSize; k++) {
-                if (k == 0) {
-                    progression[k] = startNumOfProgression;
-                } else {
-                    progression[k] = progression[k - 1] + commonDifference;
-                }
-            }
+            int[] progression = getProgression(progressionSize);
             int[] progressionBeforeHidden = Arrays.copyOfRange(progression, 0, indexOfHiddenNum);
             int[] progressionAfterHidden = Arrays.copyOfRange(progression, indexOfHiddenNum + 1, progressionSize);
             for (int m = 0; m < indexOfHiddenNum; m++) {
@@ -99,5 +89,20 @@ public class Progression {
             rightAnswers[i] = String.valueOf(progression[indexOfHiddenNum]);
         }
         Engine.runGame(RULES, gameQuestions, rightAnswers);
+    }
+
+    private static int[] getProgression(int numberOfValues) {
+        int[] progression = new int[numberOfValues];
+        int startNumOfProgression = Engine.getRandomNum().nextInt(Engine.getMaxRandom());
+        final int maxCommonDifference = 10;
+        int commonDifference = Engine.getRandomNum().nextInt(maxCommonDifference);
+        for (int k = 0; k < numberOfValues; k++) {
+            if (k == 0) {
+                progression[k] = startNumOfProgression;
+            } else {
+                progression[k] = progression[k - 1] + commonDifference;
+            }
+        }
+        return progression;
     }
 }
