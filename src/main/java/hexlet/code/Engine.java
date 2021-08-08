@@ -7,6 +7,9 @@ public class Engine {
 
     private static String name;
 
+    private static final int MIN_RANDOM_VALUE = 1;
+    private static final int MAX_RANDOM_VALUE = 99;
+
     public static void setName(String scannerName) {
         name = scannerName;
     }
@@ -24,8 +27,7 @@ public class Engine {
     }
 
     public static int getMinRandom() {
-        final int minRandom = 1;
-        return minRandom;
+        return  1;
     }
 
     public static Random getRandomNum() {
@@ -35,8 +37,10 @@ public class Engine {
 
     public static int[] showRandomNumArray() {
         int[] showRandomNum = new int[2];
-        showRandomNum[0] = Engine.getMinRandom() + Engine.getRandomNum().nextInt(Engine.getMaxRandom());
-        showRandomNum[1] = Engine.getMinRandom() + Engine.getRandomNum().nextInt(Engine.getMaxRandom());
+        showRandomNum[0] = MIN_RANDOM_VALUE + Engine.getRandomNum().nextInt(MAX_RANDOM_VALUE);
+        showRandomNum[1] = MIN_RANDOM_VALUE + Engine.getRandomNum().nextInt(MAX_RANDOM_VALUE);
+//        showRandomNum[0] = Engine.getMinRandom() + Engine.getRandomNum().nextInt(Engine.getMaxRandom());
+//        showRandomNum[1] = Engine.getMinRandom() + Engine.getRandomNum().nextInt(Engine.getMaxRandom());
         return showRandomNum;
     }
 
@@ -89,11 +93,11 @@ public class Engine {
     }
 
     public static void printLetsTryAgain() {
-        System.out.println("Let's try again, " + Engine.getName() + "!");
+        System.out.println("Let's try again, " + name + "!");
     }
 
     public static void printCongartulations() {
-        System.out.println("Congratulations, " + Engine.getName() + "!");
+        System.out.println("Congratulations, " + name + "!");
     }
 
     public static void printError() {
