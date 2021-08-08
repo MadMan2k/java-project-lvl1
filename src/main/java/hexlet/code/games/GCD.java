@@ -27,8 +27,7 @@ public class GCD {
         int[][] randomNumArrays = new int[Engine.NUMBER_OF_TRIES][2];
         for (int i = 0; i < randomNumArrays.length; i++) {
             randomNumArrays[i] = Engine.getRandomNumArray();
-            gameQuestions[i] = String.valueOf(randomNumArrays[i][0]) + " "
-                    + String.valueOf(randomNumArrays[i][1]);
+            gameQuestions[i] = String.format("%s %s", randomNumArrays[i][0], randomNumArrays[i][1]);
             rightAnswers[i] = String.valueOf(gcdByEuclid(randomNumArrays[i][0], randomNumArrays[i][1]));
         }
         Engine.runGame(RULES, gameQuestions, rightAnswers);
