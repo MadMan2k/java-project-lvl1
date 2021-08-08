@@ -80,11 +80,11 @@ public class Engine {
     }
 
     private static void printLetsTryAgain() {
-        System.out.println("Let's try again, " + Engine.getName() + "!");
+        System.out.println("Let's try again, " + getName() + "!");
     }
 
     private static void printCongartulations() {
-        System.out.println("Congratulations, " + Engine.getName() + "!");
+        System.out.println("Congratulations, " + getName() + "!");
     }
 
     public static void printError() {
@@ -92,7 +92,7 @@ public class Engine {
     }
 
     private static void doWeHaveAWinner(int correctAnswer) {
-        if (correctAnswer == Engine.NUMBER_OF_TRIES) {
+        if (correctAnswer == NUMBER_OF_TRIES) {
             printCongartulations();
         }
     }
@@ -107,14 +107,14 @@ public class Engine {
 
     public static void runGame(String rules, String[] gameQuestions, String[] rightAnswers) {
         printRules(rules);
-        for (int i = 0; i < Engine.NUMBER_OF_TRIES; i++) {
-            Engine.printQuestion();
+        for (int i = 0; i < NUMBER_OF_TRIES; i++) {
+            printQuestion();
             printGameQuestion(gameQuestions[i]);
-            String playerAnswer = Engine.stringYourAnswer();
-            if (!Engine.verifyAnswer(rightAnswers[i], playerAnswer)) {
+            String playerAnswer = stringYourAnswer();
+            if (!verifyAnswer(rightAnswers[i], playerAnswer)) {
                 break;
             }
         }
-        Engine.doWeHaveAWinner(Engine.getCounterOfCorrectAnswers());
+        Engine.doWeHaveAWinner(getCounterOfCorrectAnswers());
     }
 }
