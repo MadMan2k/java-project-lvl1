@@ -22,9 +22,9 @@ public class GCD {
 //    }
 
     public static void gcdGame() {
-        String[] gameQuestions = new String[Engine.getNumberOfTries()];
-        String[] rightAnswers = new String[Engine.getNumberOfTries()];
-        int[][] randomNumArrays = new int[Engine.getNumberOfTries()][2];
+        String[] gameQuestions = new String[Engine.NUMBER_OF_TRIES];
+        String[] rightAnswers = new String[Engine.NUMBER_OF_TRIES];
+        int[][] randomNumArrays = new int[Engine.NUMBER_OF_TRIES][2];
         for (int i = 0; i < randomNumArrays.length; i++) {
             randomNumArrays[i] = Engine.getRandomNumArray();
             gameQuestions[i] = String.valueOf(randomNumArrays[i][0]) + " "

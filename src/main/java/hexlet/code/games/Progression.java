@@ -57,12 +57,12 @@ public class Progression {
 //}
 
     public static void progressionGame() {
-        String[] gameQuestions = new String[Engine.getNumberOfTries()];
-        String[] rightAnswers = new String[Engine.getNumberOfTries()];
+        String[] gameQuestions = new String[Engine.NUMBER_OF_TRIES];
+        String[] rightAnswers = new String[Engine.NUMBER_OF_TRIES];
         final int progressionSize = 10;
         final int maxCommonDifference = 10;
         int[] progression = new int[progressionSize];
-        for (int i = 0; i < Engine.getNumberOfTries(); i++) {
+        for (int i = 0; i < Engine.NUMBER_OF_TRIES; i++) {
             int startNumOfProgression = Engine.getRandomNum().nextInt(Engine.getMaxRandom());
             int commonDifference = Engine.getRandomNum().nextInt(maxCommonDifference);
             int indexOfHiddenNum = Engine.getRandomNum().nextInt(progressionSize);

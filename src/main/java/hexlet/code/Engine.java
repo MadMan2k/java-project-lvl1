@@ -41,10 +41,10 @@ public class Engine {
         return randomNumArray;
     }
 
-    public static int getNumberOfTries() {
-        final int numberOfTries = 3;
-        return numberOfTries;
-    }
+//    public static int getNumberOfTries() {
+//        final int numberOfTries = 3;
+//        return numberOfTries;
+//    }
 
     public static void countCorrectAnswer() {
         counterOfCorrectAnswers++;
@@ -116,7 +116,7 @@ public class Engine {
 
     public static void runGame(String rules, String[] gameQuestions, String[] rightAnswers) {
         printRules(rules);
-        for (int i = 0; i < Engine.getNumberOfTries(); i++) {
+        for (int i = 0; i < Engine.NUMBER_OF_TRIES; i++) {
             Engine.printQuestion();
             printGameQuestion(gameQuestions[i]);
             String playerAnswer = Engine.stringYourAnswer();
@@ -124,6 +124,6 @@ public class Engine {
                 break;
             }
         }
-        Engine.doWeHaveAWinner(Engine.getCounterOfCorrectAnswers(), Engine.getNumberOfTries());
+        Engine.doWeHaveAWinner(Engine.getCounterOfCorrectAnswers(), Engine.NUMBER_OF_TRIES);
     }
 }

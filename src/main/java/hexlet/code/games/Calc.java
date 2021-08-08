@@ -44,15 +44,15 @@ public class Calc {
 
 
     public static void calcGame() {
-        String[] gameQuestions = new String[Engine.getNumberOfTries()];
-        String[] rightAnswers = new String[Engine.getNumberOfTries()];
+        String[] gameQuestions = new String[Engine.NUMBER_OF_TRIES];
+        String[] rightAnswers = new String[Engine.NUMBER_OF_TRIES];
         final int numberOfOperators = 3;
-        int[] resultInt = new int[Engine.getNumberOfTries()];
-        int[][] randomNumArrays = new int[Engine.getNumberOfTries()][2];
+        int[] resultInt = new int[Engine.NUMBER_OF_TRIES];
+        int[][] randomNumArrays = new int[Engine.NUMBER_OF_TRIES][2];
         for (int i = 0; i < randomNumArrays.length; i++) {
             randomNumArrays[i] = Engine.getRandomNumArray();
         }
-        int[] showRandomOperators = new int[Engine.getNumberOfTries()];
+        int[] showRandomOperators = new int[Engine.NUMBER_OF_TRIES];
         for (int j = 0; j < showRandomOperators.length; j++) {
             showRandomOperators[j] = Engine.getRandomNum().nextInt(numberOfOperators);
         }

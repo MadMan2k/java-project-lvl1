@@ -36,11 +36,11 @@ public class Prime {
 //    }
 
     public static void primeGame() {
-        String[] gameQuestions = new String[Engine.getNumberOfTries()];
-        String[] rightAnswers = new String[Engine.getNumberOfTries()];
+        String[] gameQuestions = new String[Engine.NUMBER_OF_TRIES];
+        String[] rightAnswers = new String[Engine.NUMBER_OF_TRIES];
         final int threeIsNotMagicNumber = 3;
-        int[] randomNums = new int[Engine.getNumberOfTries()];
-        for (int i = 0; i < Engine.getNumberOfTries(); i++) {
+        int[] randomNums = new int[Engine.NUMBER_OF_TRIES];
+        for (int i = 0; i < Engine.NUMBER_OF_TRIES; i++) {
             randomNums[i] = Engine.getRandomNum().nextInt(Engine.getMaxRandom());
             gameQuestions[i] = String.valueOf(randomNums[i]);
             if (randomNums[i] == 0 || randomNums[i] == 1) {

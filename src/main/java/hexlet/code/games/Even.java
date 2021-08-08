@@ -30,9 +30,9 @@ public class Even {
 //    }
 
     public static void evenGame() {
-        String[] gameQuestions = new String[Engine.getNumberOfTries()];
-        String[] rightAnswers = new String[Engine.getNumberOfTries()];
-        int[] randomNums = new int[Engine.getNumberOfTries()];
+        String[] gameQuestions = new String[Engine.NUMBER_OF_TRIES];
+        String[] rightAnswers = new String[Engine.NUMBER_OF_TRIES];
+        int[] randomNums = new int[Engine.NUMBER_OF_TRIES];
         for (int i = 0; i < randomNums.length; i++) {
             randomNums[i] = Engine.getRandomNum().nextInt(Engine.getMaxRandom());
         }
