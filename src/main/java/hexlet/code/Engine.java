@@ -12,8 +12,9 @@ public class Engine {
     public static final String YES_TEXT = "yes";
     public static final String NO_TEXT = "no";
 
-    public static void setName(String scannerName) {
-        name = scannerName;
+    public static void setPlayerName() {
+        Scanner playerName = new Scanner(System.in);
+        name = playerName.nextLine();
     }
 
     public static String getName() {
