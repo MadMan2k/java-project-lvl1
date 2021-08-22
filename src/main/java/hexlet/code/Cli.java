@@ -1,11 +1,13 @@
 package hexlet.code;
 
-public class Cli {
-    public static void printMayIHaveYourName() {
-        System.out.print("May I have your name? ");
-    }
+import java.util.Scanner;
 
-    public static void printHelloPlayer() {
-        System.out.println("Hello, " + Engine.getName() + "!");
+public class Cli {
+    public static String getNameFromPlayer() {
+        System.out.print("May I have your name? ");
+        Scanner playerNameScanner = new Scanner(System.in);
+        String playerName = playerNameScanner.nextLine();
+        System.out.println("Hello, " + playerName + "!");
+        return playerName;
     }
 }

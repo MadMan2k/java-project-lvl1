@@ -12,13 +12,12 @@ public class Engine {
     public static final String YES_TEXT = "yes";
     public static final String NO_TEXT = "no";
 
-    public static void setPlayerName() {
-        Scanner playerName = new Scanner(System.in);
-        name = playerName.nextLine();
-    }
-
     public static String getName() {
         return name;
+    }
+
+    public static void setPlayerName() {
+        name = Cli.getNameFromPlayer();
     }
 
     private static int counterOfCorrectAnswers = 0;
@@ -92,7 +91,7 @@ public class Engine {
         System.out.println("Error -1");
     }
 
-    private static void doWeHaveAWinner(int correctAnswer) {
+    private static void checkWinnerAndPrintCongrats(int correctAnswer) {
         if (correctAnswer == NUMBER_OF_TRIES) {
             printCongartulations();
         }
@@ -116,6 +115,6 @@ public class Engine {
                 break;
             }
         }
-        Engine.doWeHaveAWinner(getCounterOfCorrectAnswers());
+        checkWinnerAndPrintCongrats(getCounterOfCorrectAnswers());
     }
 }
