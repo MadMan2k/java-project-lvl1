@@ -9,7 +9,7 @@ public class GCD {
         String[] rightAnswers = new String[Engine.NUMBER_OF_TRIES];
         int[][] randomNumArrays = new int[Engine.NUMBER_OF_TRIES][2];
         for (int i = 0; i < randomNumArrays.length; i++) {
-            randomNumArrays[i] = Engine.getRandomNumArray();
+            randomNumArrays[i] = Engine.getTwoRandomNumsArrayWithMin();
             gameQuestions[i] = String.format("%s %s", randomNumArrays[i][0], randomNumArrays[i][1]);
             rightAnswers[i] = String.valueOf(gcdByEuclid(randomNumArrays[i][0], randomNumArrays[i][1]));
         }

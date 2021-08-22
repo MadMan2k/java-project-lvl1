@@ -11,7 +11,7 @@ public class Calc {
         int[] resultInt = new int[Engine.NUMBER_OF_TRIES];
         int[][] randomNumArrays = new int[Engine.NUMBER_OF_TRIES][2];
         for (int i = 0; i < randomNumArrays.length; i++) {
-            randomNumArrays[i] = Engine.getRandomNumArray();
+            randomNumArrays[i] = Engine.getTwoRandomNumsArrayWithMin();
         }
         int[] randomOperators = getRandomOperators(); // 0 ==> sum; 1 ==> subtraction; 2 ==> product;
         for (int k = 0; k < randomNumArrays.length; k++) {
