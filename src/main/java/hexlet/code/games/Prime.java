@@ -8,7 +8,7 @@ public class Prime {
         String[] gameQuestions = new String[Engine.NUMBER_OF_TRIES];
         String[] rightAnswers = new String[Engine.NUMBER_OF_TRIES];
         final int threeIsNotMagicNumber = 3;
-        int[] randomNums = getRandomNums(Engine.NUMBER_OF_TRIES);
+        int[] randomNums = Engine.getRandomNumsArray(Engine.NUMBER_OF_TRIES);
         for (int i = 0; i < Engine.NUMBER_OF_TRIES; i++) {
             gameQuestions[i] = String.valueOf(randomNums[i]);
             if (randomNums[i] == 0 || randomNums[i] == 1) {
@@ -17,23 +17,21 @@ public class Prime {
             if (randomNums[i] == 2 || randomNums[i] == threeIsNotMagicNumber) {
                 rightAnswers[i] = Engine.YES_TEXT;
             }
-            for (int k = 2; k <= randomNums[i] / 2; k++) {
-                if ((randomNums[i] % k) == 0) {
-                    rightAnswers[i] = Engine.NO_TEXT;
-                    break;
-                } else {
-                    rightAnswers[i] = Engine.YES_TEXT;
-                }
-            }
+            rightAnswers[i] = checkRightAnswer(randomNums[i]);
         }
         Engine.runGame(RULES, gameQuestions, rightAnswers);
     }
 
-    private static int[] getRandomNums(int numberOfValues) {
-        int[] randomNums = new int[numberOfValues];
-        for (int i = 0; i < randomNums.length; i++) {
-            randomNums[i] = Engine.getRandomNumWithMax(Engine.getMaxRandom());
+    private static String checkRightAnswer(int randomNum) {
+        String rightAnswer = "";
+        for (int k = 2; k <= randomNum / 2; k++) {
+            if ((randomNum % k) == 0) {
+                rightAnswer = Engine.NO_TEXT;
+                break;
+            } else {
+                rightAnswer = Engine.YES_TEXT;
+            }
         }
-        return randomNums;
+        return rightAnswer;
     }
 }
