@@ -32,7 +32,7 @@ public class Prime {
     private static int[] getRandomNums(int numberOfValues) {
         int[] randomNums = new int[numberOfValues];
         for (int i = 0; i < randomNums.length; i++) {
-            randomNums[i] = Engine.getRandomNum().nextInt(Engine.getMaxRandom());
+            randomNums[i] = Engine.getRandomNumWithMax(Engine.getMaxRandom());
         }
         return randomNums;
     }

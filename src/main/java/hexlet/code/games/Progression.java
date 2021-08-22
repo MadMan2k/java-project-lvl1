@@ -11,7 +11,7 @@ public class Progression {
         String[] rightAnswers = new String[Engine.NUMBER_OF_TRIES];
         final int progressionSize = 10;
         for (int i = 0; i < Engine.NUMBER_OF_TRIES; i++) {
-            int indexOfHiddenNum = Engine.getRandomNum().nextInt(progressionSize);
+            int indexOfHiddenNum = Engine.getRandomNumWithMax(progressionSize);
             int[] progression = getProgression(progressionSize);
             int[] progressionBeforeHidden = Arrays.copyOfRange(progression, 0, indexOfHiddenNum);
             int[] progressionAfterHidden = Arrays.copyOfRange(progression, indexOfHiddenNum + 1, progressionSize);
@@ -43,9 +43,9 @@ public class Progression {
 
     private static int[] getProgression(int numberOfValues) {
         int[] progression = new int[numberOfValues];
-        int startNumOfProgression = Engine.getRandomNum().nextInt(Engine.getMaxRandom());
+        int startNumOfProgression = Engine.getRandomNumWithMax(Engine.getMaxRandom());
         final int maxCommonDifference = 10;
-        int commonDifference = Engine.getRandomNum().nextInt(maxCommonDifference);
+        int commonDifference = Engine.getRandomNumWithMax(maxCommonDifference);
         for (int k = 0; k < numberOfValues; k++) {
             if (k == 0) {
                 progression[k] = startNumOfProgression;
