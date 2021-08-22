@@ -18,30 +18,6 @@ public class Progression {
             gameQuestions[i] = getQuestionPartBeforeHidden(indexOfHiddenNum, progressionBeforeHidden)
             + getHiddenPart(indexOfHiddenNum, progressionSize)
                     + getQuestionPartAfterHidden(progressionSize, indexOfHiddenNum, progressionAfterHidden);
-//            for (int m = 0; m < indexOfHiddenNum; m++) {
-//                if (m == 0) {
-//                    gameQuestions[i] = String.valueOf(progressionBeforeHidden[m]) + " ";
-//                } else {
-//                    gameQuestions[i] = gameQuestions[i] + String.valueOf(progressionBeforeHidden[m]) + " ";
-//                }
-//            }
-
-//            if (indexOfHiddenNum == progressionSize - 1) {
-//                gameQuestions[i] = gameQuestions[i] + "..";
-//            } else if (indexOfHiddenNum == 0) {
-//                gameQuestions[i] = ".. ";
-//            } else {
-//                gameQuestions[i] = gameQuestions[i] + ".. ";
-//            }
-
-//            for (int n = 0; n < progressionSize - indexOfHiddenNum - 1; n++) {
-//                if (n == progressionSize - indexOfHiddenNum - 2) {
-//                    gameQuestions[i] = gameQuestions[i] + String.valueOf(progressionAfterHidden[n]);
-//                } else {
-//                    gameQuestions[i] = gameQuestions[i] + String.valueOf(progressionAfterHidden[n]) + " ";
-//                }
-//            }
-
             rightAnswers[i] = String.valueOf(progression[indexOfHiddenNum]);
         }
         Engine.runGame(RULES, gameQuestions, rightAnswers);

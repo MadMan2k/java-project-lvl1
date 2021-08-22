@@ -32,7 +32,6 @@ public class App {
         if (selectedGame != exit0) {
             System.out.println("Welcome to the Brain Games!");
             Engine.setPlayerName();
-
             switch (selectedGame) {
                 case greet1:
                     break;
