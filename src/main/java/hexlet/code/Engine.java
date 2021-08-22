@@ -13,10 +13,6 @@ public class Engine {
     public static final String YES_TEXT = "yes";
     public static final String NO_TEXT = "no";
 
-    public static String getName() {
-        return name;
-    }
-
     public static void setPlayerName() {
         name = Cli.getNameFromPlayer();
     }
@@ -81,11 +77,11 @@ public class Engine {
     }
 
     private static void printLetsTryAgain() {
-        System.out.println("Let's try again, " + getName() + "!");
+        System.out.println("Let's try again, " + name + "!");
     }
 
     private static void printCongartulations() {
-        System.out.println("Congratulations, " + getName() + "!");
+        System.out.println("Congratulations, " + name + "!");
     }
 
     public static void printError() {

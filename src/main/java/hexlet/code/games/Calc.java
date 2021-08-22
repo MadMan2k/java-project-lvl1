@@ -13,27 +13,23 @@ public class Calc {
         for (int i = 0; i < randomNumArrays.length; i++) {
             randomNumArrays[i] = Engine.getRandomNumArray();
         }
-        int[] randomOperators = getRandomOperators(); // 0 ==> sum ; 1 ==> subtraction ; 2 ==>  product ;
+        int[] randomOperators = getRandomOperators(); // 0 ==> sum; 1 ==> subtraction; 2 ==> product;
         for (int k = 0; k < randomNumArrays.length; k++) {
-            switch (randomOperators[k]) { // 0 ==> sum ; 1 ==> subtraction ; 2 ==>  product ; default ==> error
+            gameQuestions[k] = gameQuestion(randomNumArrays[k][0], randomNumArrays[k][1], randomOperators[k]);
+            switch (randomOperators[k]) { // 0 ==> sum; 1 ==> subtraction; 2 ==> product; default ==> error
                 case 0:
-                    gameQuestions[k] = gameQuestion(randomNumArrays[k][0], randomNumArrays[k][1], "+");
                     resultInt[k] = sum(randomNumArrays[k][0], randomNumArrays[k][1]);
-                    rightAnswers[k] = resultToString(resultInt[k]);
                     break;
                 case 1:
-                    gameQuestions[k] = gameQuestion(randomNumArrays[k][0], randomNumArrays[k][1], "-");
                     resultInt[k] = subtraction(randomNumArrays[k][0], randomNumArrays[k][1]);
-                    rightAnswers[k] = resultToString(resultInt[k]);
                     break;
                 case 2: // The difficulty decreased to one-tenth of its original level for easier game
-                    gameQuestions[k] = gameQuestion(randomNumArrays[k][0], randomNumArrays[k][1], "*");
                     resultInt[k] = productDifficultyDecreased(randomNumArrays[k][0], randomNumArrays[k][1]);
-                    rightAnswers[k] = resultToString(resultInt[k]);
                     break;
                 default :
                     Engine.printError();
             }
+            rightAnswers[k] = resultToString(resultInt[k]);
         }
         Engine.runGame(RULES, gameQuestions, rightAnswers);
     }
@@ -42,16 +38,16 @@ public class Calc {
         return String.valueOf(rightAnswer);
     }
 
-    private static String gameQuestion(int firstNum, int secondNum, String operator) {
+    private static String gameQuestion(int firstNum, int secondNum, int operator) {
         String gameQuestion;
-        switch (operator) {
-            case "+":
+        switch (operator) { // 0 ==> sum; 1 ==> subtraction; 2 ==> product;
+            case 0:
                 gameQuestion = String.format("%s + %s", firstNum, secondNum);
                 break;
-            case "-":
+            case 1:
                 gameQuestion = String.format("%s - %s", firstNum, secondNum);
                 break;
-            case "*":
+            case 2:
                 gameQuestion = String.format("%s * %s", firstNum / DECREASE_DIFFICULTY_CALC,
                         secondNum / DECREASE_DIFFICULTY_CALC);
                 break;
