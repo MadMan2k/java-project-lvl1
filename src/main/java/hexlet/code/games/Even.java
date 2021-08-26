@@ -17,11 +17,9 @@ public class Even {
     }
 
     private static String checkRightAnswer(int randomNum) {
-        String rightAnswer;
+        String rightAnswer = Engine.NO_TEXT;
         if (randomNum % 2 == 0) {
             rightAnswer = Engine.YES_TEXT;
-        } else {
-            rightAnswer = Engine.NO_TEXT;
         }
         return rightAnswer;
     }
