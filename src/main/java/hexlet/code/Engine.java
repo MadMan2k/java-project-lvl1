@@ -26,52 +26,7 @@ public class Engine {
             return false;
         }
     }
-////////////////////////////////
 
-//    private static void printQuestion() {
-//        System.out.print("Question: ");
-//    }
-
-//    private static String stringYourAnswer() {
-//        System.out.print("Your answer : ");
-//        return SET_ANSWER.nextLine();
-//    }
-
-//    private static void printAnswerIsCorrect() {
-//        System.out.println("Correct!");
-//    }
-
-//    private static void printAnswerIsWrong(String result, String answer) {
-//        System.out.printf("'%s' is wrong answer ;(. Correct answer was '%s'%n", answer, result);
-//    }
-
-//    private static void printLetsTryAgain() {
-//        System.out.println("Let's try again, " + name + "!");
-//    }
-
-//    private static void printCongartulations() {
-//        System.out.println("Congratulations, " + name + "!");
-//    }
-
-//    public static void printError() {
-//        System.out.println("Error -1");
-//    }
-
-//    private static void checkWinnerAndPrintCongrats(int correctAnswer) {
-//        if (correctAnswer == NUMBER_OF_TRIES) {
-//            System.out.println("Congratulations, " + name + "!");
-//        }
-//    }
-
-//    private static void printRules(String rules) {
-//        System.out.println(rules);
-//    }
-
-//    private static void printGameQuestion(String gameQuestion) {
-//        System.out.println(gameQuestion);
-//    }
-
-////////////////////////////////
     public static void runGame(String rules, String[] gameQuestions, String[] rightAnswers) {
         System.out.println(rules);
         for (int i = 0; i < NUMBER_OF_TRIES; i++) {
@@ -83,7 +38,6 @@ public class Engine {
                 break;
             }
         }
-//        checkWinnerAndPrintCongrats(counterOfCorrectAnswers);
         if (counterOfCorrectAnswers == NUMBER_OF_TRIES) {
             System.out.println("Congratulations, " + name + "!");
         }
