@@ -8,26 +8,17 @@ public class Engine {
     public static final int NUMBER_OF_TRIES = 3;
     public static final String YES_TEXT = "yes";
     public static final String NO_TEXT = "no";
+    private static int counterOfCorrectAnswers = 0;
+    private static final Scanner SET_ANSWER = new Scanner(System.in);
 
     public static void setPlayerName() {
         name = Cli.getNameFromPlayer();
     }
 
-    private static int counterOfCorrectAnswers = 0;
-    static final Scanner SET_ANSWER = new Scanner(System.in);
-
-    private static void countCorrectAnswer() {
-        counterOfCorrectAnswers++;
-    }
-
-    private static int getCounterOfCorrectAnswers() {
-        return counterOfCorrectAnswers;
-    }
-
     private static boolean verifyAnswer(String result, String answer) {
         if (answer.equals(result)) {
             printAnswerIsCorrect();
-            countCorrectAnswer();
+            counterOfCorrectAnswers++;
             return true;
         } else {
             printAnswerIsWrong(result, answer);
@@ -89,6 +80,6 @@ public class Engine {
                 break;
             }
         }
-        checkWinnerAndPrintCongrats(getCounterOfCorrectAnswers());
+        checkWinnerAndPrintCongrats(counterOfCorrectAnswers);
     }
 }
