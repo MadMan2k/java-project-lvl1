@@ -8,12 +8,13 @@ public class GCD {
     public static void gcdGame() {
         String[] gameQuestions = new String[Engine.NUMBER_OF_TRIES];
         String[] rightAnswers = new String[Engine.NUMBER_OF_TRIES];
-        int[][] randomNumArrays = new int[Engine.NUMBER_OF_TRIES][2];
-        for (int i = 0; i < randomNumArrays.length; i++) {
-            randomNumArrays[i] = Utils.getTwoRandomNumsArrayWithMin();
-            gameQuestions[i] = String.format("%s %s", randomNumArrays[i][0], randomNumArrays[i][1]);
-            rightAnswers[i] = String.valueOf(gcdByEuclid(randomNumArrays[i][0], randomNumArrays[i][1]));
+        for (int i = 0; i < Engine.NUMBER_OF_TRIES; i++) {
+            int firstRandomNum = Utils.MIN_OF_RANDOM + Utils.getRandomNum(Utils.MAX_OF_RANDOM);
+            int secondRandomNum = Utils.MIN_OF_RANDOM + Utils.getRandomNum(Utils.MAX_OF_RANDOM);
+            gameQuestions[i] = String.format("%s %s", firstRandomNum, secondRandomNum);
+            rightAnswers[i] = String.valueOf(gcdByEuclid(firstRandomNum, secondRandomNum));
         }
+
         Engine.runGame(RULES, gameQuestions, rightAnswers);
     }
 

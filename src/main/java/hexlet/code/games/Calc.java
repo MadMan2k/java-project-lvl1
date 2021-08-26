@@ -62,7 +62,7 @@ public class Calc {
         final int numberOfOperators = 3;
         int[] randomOperators = new int[Engine.NUMBER_OF_TRIES];
         for (int j = 0; j < randomOperators.length; j++) {
-            randomOperators[j] = Utils.getRandomNumWithMax(numberOfOperators);
+            randomOperators[j] = Utils.getRandomNum(numberOfOperators);
         }
         return randomOperators;
     }

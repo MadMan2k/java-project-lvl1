@@ -9,10 +9,9 @@ public class Even {
         String[] gameQuestions = new String[Engine.NUMBER_OF_TRIES];
         String[] rightAnswers = new String[Engine.NUMBER_OF_TRIES];
         for (int i = 0; i < Engine.NUMBER_OF_TRIES; i++) {
-            int randomNum = Utils.getRandomNumWithMax(Utils.MAX_OF_RANDOM);
+            int randomNum = Utils.getRandomNum(Utils.MAX_OF_RANDOM);
             gameQuestions[i] = String.valueOf(randomNum);
             rightAnswers[i] = checkRightAnswer(randomNum);
-
         }
         Engine.runGame(RULES, gameQuestions, rightAnswers);
     }
