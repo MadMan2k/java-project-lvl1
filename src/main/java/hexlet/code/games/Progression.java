@@ -19,8 +19,13 @@ public class Progression {
                 progressionString[j] = String.valueOf(progression[j]);
             }
             progressionString[indexOfHiddenNum] = "..";
-            gameQuestions[i] = Arrays.toString(progressionString);
-            gameQuestions[i] = gameQuestions[i].substring(1, gameQuestions[i].length() - 1);
+            for (int k = 0; k < progressionSize; k++) {
+                if (k == 0) {
+                    gameQuestions[i] = progressionString[k];
+                } else {
+                    gameQuestions[i] = gameQuestions[i] + " " + progressionString[k];
+                }
+            }
             rightAnswers[i] = String.valueOf(progression[indexOfHiddenNum]);
         }
         Engine.runGame(RULES, gameQuestions, rightAnswers);
