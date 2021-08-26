@@ -8,12 +8,11 @@ public class Even {
     public static void evenGame() {
         String[] gameQuestions = new String[Engine.NUMBER_OF_TRIES];
         String[] rightAnswers = new String[Engine.NUMBER_OF_TRIES];
-        int[] randomNums = Utils.getRandomNumsArray(Engine.NUMBER_OF_TRIES);
-        for (int j = 0; j < gameQuestions.length; j++) {
-            gameQuestions[j] = String.valueOf(randomNums[j]);
-        }
-        for (int k = 0; k < rightAnswers.length; k++) {
-            rightAnswers[k] = checkRightAnswer(randomNums[k]);
+        for (int i = 0; i < Engine.NUMBER_OF_TRIES; i++) {
+            int randomNum = Utils.getRandomNumWithMax(Utils.MAX_OF_RANDOM);
+            gameQuestions[i] = String.valueOf(randomNum);
+            rightAnswers[i] = checkRightAnswer(randomNum);
+
         }
         Engine.runGame(RULES, gameQuestions, rightAnswers);
     }
