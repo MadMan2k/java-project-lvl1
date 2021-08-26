@@ -20,6 +20,7 @@ public class Progression {
             }
             progressionString[indexOfHiddenNum] = "..";
             gameQuestions[i] = Arrays.toString(progressionString);
+            gameQuestions[i] = gameQuestions[i].substring(1, gameQuestions[i].length() - 1);
             rightAnswers[i] = String.valueOf(progression[indexOfHiddenNum]);
         }
         Engine.runGame(RULES, gameQuestions, rightAnswers);
