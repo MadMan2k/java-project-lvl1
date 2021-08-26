@@ -29,10 +29,6 @@ public class Prime {
             if ((randomNum % k) == 0) {
                 rightAnswer = Engine.NO_TEXT;
             }
-//                break;
-//            } else {
-//                rightAnswer = Engine.YES_TEXT;
-//            }
         }
         return rightAnswer;
     }
