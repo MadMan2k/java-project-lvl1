@@ -28,22 +28,6 @@ public class Progression {
             }
         }
         return sb.substring(0, sb.length() - 1);
-
-//        StringBuilder gameQuestion = null;
-//        String[] progressionString = new String[PROGRESSION_SIZE];
-//        for (int j = 0; j < PROGRESSION_SIZE; j++) {
-//            progressionString[j] = String.valueOf(progression[j]);
-//        }
-//        progressionString[indexOfHiddenNum] = "..";
-//        for (int k = 0; k < PROGRESSION_SIZE; k++) {
-//            if (k == 0) {
-//                gameQuestion = new StringBuilder(progressionString[k]);
-//            } else {
-//                gameQuestion.append(" ").append(progressionString[k]);
-//            }
-//        }
-//
-//        return gameQuestion.toString();
     }
 
     private static int[] getProgression(int numberOfValues) {
