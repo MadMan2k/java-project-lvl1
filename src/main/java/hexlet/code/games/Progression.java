@@ -13,25 +13,13 @@ public class Progression {
             int indexOfHiddenNum = Utils.getRandomNum(PROGRESSION_SIZE);
             int[] progression = getProgression(PROGRESSION_SIZE);
             gameQuestions[i] = getGameQuestion(progression, indexOfHiddenNum);
-//            String[] progressionString = new String[progressionSize];
-//            for (int j = 0; j < progressionSize; j++) {
-//                progressionString[j] = String.valueOf(progression[j]);
-//            }
-//            progressionString[indexOfHiddenNum] = "..";
-//            for (int k = 0; k < progressionSize; k++) {
-//                if (k == 0) {
-//                    gameQuestions[i] = progressionString[k];
-//                } else {
-//                    gameQuestions[i] = gameQuestions[i] + " " + progressionString[k];
-//                }
-//            }
             rightAnswers[i] = String.valueOf(progression[indexOfHiddenNum]);
         }
         Engine.runGame(RULES, gameQuestions, rightAnswers);
     }
 
     public static String getGameQuestion(int[] progression, int indexOfHiddenNum) {
-        StringBuilder gameQuestion = new StringBuilder();
+        StringBuilder gameQuestion = null;
         String[] progressionString = new String[PROGRESSION_SIZE];
         for (int j = 0; j < PROGRESSION_SIZE; j++) {
             progressionString[j] = String.valueOf(progression[j]);
