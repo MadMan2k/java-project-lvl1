@@ -26,7 +26,7 @@ public class Progression {
 
     private static int[] getProgression(int numberOfValues) {
         int[] progression = new int[numberOfValues];
-        int startNumOfProgression = Utils.getRandomNumWithMax(Utils.getMaxRandom());
+        int startNumOfProgression = Utils.getRandomNumWithMax(Utils.MAX_OF_RANDOM);
         final int maxCommonDifference = 10;
         int commonDifference = Utils.getRandomNumWithMax(maxCommonDifference);
         for (int k = 0; k < numberOfValues; k++) {
