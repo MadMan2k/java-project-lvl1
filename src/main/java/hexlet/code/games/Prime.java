@@ -24,14 +24,15 @@ public class Prime {
     }
 
     private static String checkRightAnswer(int randomNum) {
-        String rightAnswer = "";
+        String rightAnswer = Engine.YES_TEXT;
         for (int k = 2; k <= randomNum / 2; k++) {
             if ((randomNum % k) == 0) {
                 rightAnswer = Engine.NO_TEXT;
-                break;
-            } else {
-                rightAnswer = Engine.YES_TEXT;
             }
+//                break;
+//            } else {
+//                rightAnswer = Engine.YES_TEXT;
+//            }
         }
         return rightAnswer;
     }
