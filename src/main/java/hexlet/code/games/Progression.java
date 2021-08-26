@@ -1,6 +1,7 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
+import hexlet.code.Utils;
 
 import java.util.Arrays;
 
@@ -11,7 +12,7 @@ public class Progression {
         String[] rightAnswers = new String[Engine.NUMBER_OF_TRIES];
         final int progressionSize = 10;
         for (int i = 0; i < Engine.NUMBER_OF_TRIES; i++) {
-            int indexOfHiddenNum = Engine.getRandomNumWithMax(progressionSize);
+            int indexOfHiddenNum = Utils.getRandomNumWithMax(progressionSize);
             int[] progression = getProgression(progressionSize);
             int[] progressionBeforeHidden = Arrays.copyOfRange(progression, 0, indexOfHiddenNum);
             int[] progressionAfterHidden = Arrays.copyOfRange(progression, indexOfHiddenNum + 1, progressionSize);
@@ -25,9 +26,9 @@ public class Progression {
 
     private static int[] getProgression(int numberOfValues) {
         int[] progression = new int[numberOfValues];
-        int startNumOfProgression = Engine.getRandomNumWithMax(Engine.getMaxRandom());
+        int startNumOfProgression = Utils.getRandomNumWithMax(Utils.getMaxRandom());
         final int maxCommonDifference = 10;
-        int commonDifference = Engine.getRandomNumWithMax(maxCommonDifference);
+        int commonDifference = Utils.getRandomNumWithMax(maxCommonDifference);
         for (int k = 0; k < numberOfValues; k++) {
             if (k == 0) {
                 progression[k] = startNumOfProgression;

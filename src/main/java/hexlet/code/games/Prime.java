@@ -1,6 +1,7 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
+import hexlet.code.Utils;
 
 public class Prime {
     private static final String RULES = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
@@ -8,7 +9,7 @@ public class Prime {
         String[] gameQuestions = new String[Engine.NUMBER_OF_TRIES];
         String[] rightAnswers = new String[Engine.NUMBER_OF_TRIES];
         final int threeIsNotMagicNumber = 3;
-        int[] randomNums = Engine.getRandomNumsArray(Engine.NUMBER_OF_TRIES);
+        int[] randomNums = Utils.getRandomNumsArray(Engine.NUMBER_OF_TRIES);
         for (int i = 0; i < Engine.NUMBER_OF_TRIES; i++) {
             gameQuestions[i] = String.valueOf(randomNums[i]);
             if (randomNums[i] == 0 || randomNums[i] == 1) {

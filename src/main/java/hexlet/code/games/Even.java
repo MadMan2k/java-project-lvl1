@@ -1,13 +1,14 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
+import hexlet.code.Utils;
 
 public class Even {
     private static final String RULES = "Answer 'yes' if number even otherwise answer 'no'.";
     public static void evenGame() {
         String[] gameQuestions = new String[Engine.NUMBER_OF_TRIES];
         String[] rightAnswers = new String[Engine.NUMBER_OF_TRIES];
-        int[] randomNums = Engine.getRandomNumsArray(Engine.NUMBER_OF_TRIES);
+        int[] randomNums = Utils.getRandomNumsArray(Engine.NUMBER_OF_TRIES);
         for (int j = 0; j < gameQuestions.length; j++) {
             gameQuestions[j] = String.valueOf(randomNums[j]);
         }

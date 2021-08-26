@@ -1,6 +1,7 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
+import hexlet.code.Utils;
 
 public class Calc {
     private static final String RULES = "What is the result of the expression?";
@@ -11,7 +12,7 @@ public class Calc {
         int[] resultInt = new int[Engine.NUMBER_OF_TRIES];
         int[][] randomNumArrays = new int[Engine.NUMBER_OF_TRIES][2];
         for (int i = 0; i < randomNumArrays.length; i++) {
-            randomNumArrays[i] = Engine.getTwoRandomNumsArrayWithMin();
+            randomNumArrays[i] = Utils.getTwoRandomNumsArrayWithMin();
         }
         int[] randomOperators = getRandomOperators(); // 0 ==> sum; 1 ==> subtraction; 2 ==> product;
         for (int k = 0; k < randomNumArrays.length; k++) {
@@ -61,7 +62,7 @@ public class Calc {
         final int numberOfOperators = 3;
         int[] randomOperators = new int[Engine.NUMBER_OF_TRIES];
         for (int j = 0; j < randomOperators.length; j++) {
-            randomOperators[j] = Engine.getRandomNumWithMax(numberOfOperators);
+            randomOperators[j] = Utils.getRandomNumWithMax(numberOfOperators);
         }
         return randomOperators;
     }
