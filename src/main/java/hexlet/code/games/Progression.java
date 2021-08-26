@@ -59,7 +59,8 @@ public class Progression {
 //            if (m == 0) {
 //                questionPartBeforeHidden = String.valueOf(progressionBeforeHidden[m]) + " ";
 //            } else {
-//                questionPartBeforeHidden = questionPartBeforeHidden + String.valueOf(progressionBeforeHidden[m]) + " ";
+//                questionPartBeforeHidden = questionPartBeforeHidden
+//                + String.valueOf(progressionBeforeHidden[m]) + " ";
 //            }
 //        }
 //        return questionPartBeforeHidden;
