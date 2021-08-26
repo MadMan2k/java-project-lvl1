@@ -5,42 +5,48 @@ import hexlet.code.Utils;
 
 public class Progression {
     private static final String RULES = "What number is missing in the progression?";
+    private static final int PROGRESSION_SIZE = 10;
     public static void progressionGame() {
         String[] gameQuestions = new String[Engine.NUMBER_OF_TRIES];
         String[] rightAnswers = new String[Engine.NUMBER_OF_TRIES];
-        final int progressionSize = 10;
         for (int i = 0; i < Engine.NUMBER_OF_TRIES; i++) {
-            int indexOfHiddenNum = Utils.getRandomNum(progressionSize);
-            int[] progression = getProgression(progressionSize);
-            String[] progressionString = new String[progressionSize];
-            for (int j = 0; j < progressionSize; j++) {
-                progressionString[j] = String.valueOf(progression[j]);
-            }
-            progressionString[indexOfHiddenNum] = "..";
-            for (int k = 0; k < progressionSize; k++) {
-                if (k == 0) {
-                    gameQuestions[i] = progressionString[k];
-                } else {
-                    gameQuestions[i] = gameQuestions[i] + " " + progressionString[k];
-                }
-            }
+            int indexOfHiddenNum = Utils.getRandomNum(PROGRESSION_SIZE);
+            int[] progression = getProgression(PROGRESSION_SIZE);
+            gameQuestions[i] = getGameQuestion(progression, indexOfHiddenNum);
+//            String[] progressionString = new String[progressionSize];
+//            for (int j = 0; j < progressionSize; j++) {
+//                progressionString[j] = String.valueOf(progression[j]);
+//            }
+//            progressionString[indexOfHiddenNum] = "..";
+//            for (int k = 0; k < progressionSize; k++) {
+//                if (k == 0) {
+//                    gameQuestions[i] = progressionString[k];
+//                } else {
+//                    gameQuestions[i] = gameQuestions[i] + " " + progressionString[k];
+//                }
+//            }
             rightAnswers[i] = String.valueOf(progression[indexOfHiddenNum]);
         }
         Engine.runGame(RULES, gameQuestions, rightAnswers);
     }
 
-//        for (int i = 0; i < Engine.NUMBER_OF_TRIES; i++) {
-//            int indexOfHiddenNum = Utils.getRandomNum(progressionSize);
-//            int[] progression = getProgression(progressionSize);
-//            int[] progressionBeforeHidden = Arrays.copyOfRange(progression, 0, indexOfHiddenNum);
-//            int[] progressionAfterHidden = Arrays.copyOfRange(progression, indexOfHiddenNum + 1, progressionSize);
-//            gameQuestions[i] = getQuestionPartBeforeHidden(indexOfHiddenNum, progressionBeforeHidden)
-//            + getHiddenPart(indexOfHiddenNum, progressionSize)
-//                    + getQuestionPartAfterHidden(progressionSize, indexOfHiddenNum, progressionAfterHidden);
-//            rightAnswers[i] = String.valueOf(progression[indexOfHiddenNum]);
-//        }
-//        Engine.runGame(RULES, gameQuestions, rightAnswers);
-//    }
+    public static String getGameQuestion(int[] progression, int indexOfHiddenNum) {
+        StringBuilder gameQuestion = new StringBuilder();
+        String[] progressionString = new String[PROGRESSION_SIZE];
+        for (int j = 0; j < PROGRESSION_SIZE; j++) {
+            progressionString[j] = String.valueOf(progression[j]);
+        }
+        progressionString[indexOfHiddenNum] = "..";
+        for (int k = 0; k < PROGRESSION_SIZE; k++) {
+            if (k == 0) {
+                gameQuestion = new StringBuilder(progressionString[k]);
+            } else {
+                gameQuestion.append(" ").append(progressionString[k]);
+            }
+        }
+
+        return gameQuestion.toString();
+    }
 
     private static int[] getProgression(int numberOfValues) {
         int[] progression = new int[numberOfValues];
@@ -57,39 +63,4 @@ public class Progression {
         return progression;
     }
 
-//    private static String getQuestionPartBeforeHidden(int indexOfHiddenNum, int[] progressionBeforeHidden) {
-//        String questionPartBeforeHidden = "";
-//        for (int m = 0; m < indexOfHiddenNum; m++) {
-//            if (m == 0) {
-//                questionPartBeforeHidden = String.valueOf(progressionBeforeHidden[m]) + " ";
-//            } else {
-//                questionPartBeforeHidden = questionPartBeforeHidden
-//                + String.valueOf(progressionBeforeHidden[m]) + " ";
-//            }
-//        }
-//        return questionPartBeforeHidden;
-//    }
-//
-//    private static String getHiddenPart(int indexOfHiddenNum, int progressionSize) {
-//        String hiddenPart = "";
-//        if (indexOfHiddenNum == progressionSize - 1) {
-//            hiddenPart = "..";
-//        } else {
-//            hiddenPart = ".. ";
-//        }
-//        return hiddenPart;
-//    }
-//
-//    private static String getQuestionPartAfterHidden(int progressionSize, int indexOfHiddenNum,
-//                                                     int[] progressionAfterHidden) {
-//        String questionPartAfterHidden = "";
-//        for (int n = 0; n < progressionSize - indexOfHiddenNum - 1; n++) {
-//            if (n == progressionSize - indexOfHiddenNum - 2) {
-//                questionPartAfterHidden = questionPartAfterHidden + String.valueOf(progressionAfterHidden[n]);
-//            } else {
-//                questionPartAfterHidden = questionPartAfterHidden + String.valueOf(progressionAfterHidden[n]) + " ";
-//            }
-//        }
-//        return questionPartAfterHidden;
-//    }
 }
