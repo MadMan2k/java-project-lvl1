@@ -17,69 +17,75 @@ public class Engine {
 
     private static boolean verifyAnswer(String result, String answer) {
         if (answer.equals(result)) {
-            printAnswerIsCorrect();
+            System.out.println("Correct!");
             counterOfCorrectAnswers++;
             return true;
         } else {
-            printAnswerIsWrong(result, answer);
-            printLetsTryAgain();
+            System.out.printf("'%s' is wrong answer ;(. Correct answer was '%s'%n", answer, result);
+            System.out.println("Let's try again, " + name + "!");
             return false;
         }
     }
+////////////////////////////////
 
-    private static void printQuestion() {
-        System.out.print("Question: ");
-    }
+//    private static void printQuestion() {
+//        System.out.print("Question: ");
+//    }
 
-    private static String stringYourAnswer() {
-        System.out.print("Your answer : ");
-        return SET_ANSWER.nextLine();
-    }
+//    private static String stringYourAnswer() {
+//        System.out.print("Your answer : ");
+//        return SET_ANSWER.nextLine();
+//    }
 
-    private static void printAnswerIsCorrect() {
-        System.out.println("Correct!");
-    }
+//    private static void printAnswerIsCorrect() {
+//        System.out.println("Correct!");
+//    }
 
-    private static void printAnswerIsWrong(String result, String answer) {
-        System.out.println(String.format("'%s' is wrong answer ;(. Correct answer was '%s'", answer, result));
-    }
+//    private static void printAnswerIsWrong(String result, String answer) {
+//        System.out.printf("'%s' is wrong answer ;(. Correct answer was '%s'%n", answer, result);
+//    }
 
-    private static void printLetsTryAgain() {
-        System.out.println("Let's try again, " + name + "!");
-    }
+//    private static void printLetsTryAgain() {
+//        System.out.println("Let's try again, " + name + "!");
+//    }
 
-    private static void printCongartulations() {
-        System.out.println("Congratulations, " + name + "!");
-    }
+//    private static void printCongartulations() {
+//        System.out.println("Congratulations, " + name + "!");
+//    }
 
-    public static void printError() {
-        System.out.println("Error -1");
-    }
+//    public static void printError() {
+//        System.out.println("Error -1");
+//    }
 
-    private static void checkWinnerAndPrintCongrats(int correctAnswer) {
-        if (correctAnswer == NUMBER_OF_TRIES) {
-            printCongartulations();
-        }
-    }
+//    private static void checkWinnerAndPrintCongrats(int correctAnswer) {
+//        if (correctAnswer == NUMBER_OF_TRIES) {
+//            System.out.println("Congratulations, " + name + "!");
+//        }
+//    }
 
-    private static void printRules(String rules) {
-        System.out.println(rules);
-    }
+//    private static void printRules(String rules) {
+//        System.out.println(rules);
+//    }
 
-    private static void printGameQuestion(String gameQuestion) {
-        System.out.println(gameQuestion);
-    }
+//    private static void printGameQuestion(String gameQuestion) {
+//        System.out.println(gameQuestion);
+//    }
 
+////////////////////////////////
     public static void runGame(String rules, String[] gameQuestions, String[] rightAnswers) {
-        printRules(rules);
+        System.out.println(rules);
         for (int i = 0; i < NUMBER_OF_TRIES; i++) {
-            printQuestion();
-            printGameQuestion(gameQuestions[i]);
-            String playerAnswer = stringYourAnswer();
+            System.out.print("Question: ");
+            System.out.println(gameQuestions[i]);
+            System.out.print("Your answer : ");
+            String playerAnswer = SET_ANSWER.nextLine();
             if (!verifyAnswer(rightAnswers[i], playerAnswer)) {
                 break;
             }
         }
-        checkWinnerAndPrintCongrats(counterOfCorrectAnswers);
+//        checkWinnerAndPrintCongrats(counterOfCorrectAnswers);
+        if (counterOfCorrectAnswers == NUMBER_OF_TRIES) {
+            System.out.println("Congratulations, " + name + "!");
+        }
     }
 }

@@ -28,7 +28,7 @@ public class Calc {
                     resultInt[k] = productDifficultyDecreased(randomNumArrays[k][0], randomNumArrays[k][1]);
                     break;
                 default :
-                    Engine.printError();
+                    System.out.println("Error -1");
             }
             rightAnswers[k] = resultToString(resultInt[k]);
         }
