@@ -9,13 +9,13 @@ import hexlet.code.games.Progression;
 import java.util.Scanner;
 
 public class App {
-    final static int EXIT_0 = 0;
-    final static int GREET_1 = 1;
-    final static int EVEN_2 = 2;
-    final static int CALC_3 = 3;
-    final static int GCD_4 = 4;
-    final static int PROGRESSION_5 = 5;
-    final static int PRIME_6 = 6;
+    private static final int EXIT_0 = 0;
+    private static final int GREET_1 = 1;
+    private static final int EVEN_2 = 2;
+    private static final int CALC_3 = 3;
+    private static final int GCD_4 = 4;
+    private static final int PROGRESSION_5 = 5;
+    private static final int PRIME_6 = 6;
 
     public static void main(String[] args) {
         printGameMenu();
