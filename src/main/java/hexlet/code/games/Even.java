@@ -11,16 +11,12 @@ public class Even {
         for (int i = 0; i < Engine.NUMBER_OF_TRIES; i++) {
             int randomNum = Utils.getRandomNum(Utils.MAX_OF_RANDOM);
             gameQuestions[i] = String.valueOf(randomNum);
-            rightAnswers[i] = checkRightAnswer(randomNum);
+            rightAnswers[i] = getRightAnswer(randomNum);
         }
         Engine.runGame(RULES, gameQuestions, rightAnswers);
     }
 
-    private static String checkRightAnswer(int randomNum) {
-        String rightAnswer = Engine.NO_TEXT;
-        if (randomNum % 2 == 0) {
-            rightAnswer = Engine.YES_TEXT;
-        }
-        return rightAnswer;
+    private static String getRightAnswer(int randomNum) {
+        return randomNum % 2 == 0 ? Engine.YES_TEXT : Engine.NO_TEXT;
     }
 }
