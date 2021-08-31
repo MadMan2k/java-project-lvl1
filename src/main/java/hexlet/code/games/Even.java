@@ -11,12 +11,8 @@ public class Even {
         for (int i = 0; i < Engine.NUMBER_OF_TRIES; i++) {
             int randomNum = Utils.getRandomNum(Utils.MAX_OF_RANDOM);
             gameQuestions[i] = String.valueOf(randomNum);
-            rightAnswers[i] = getRightAnswer(randomNum);
+            rightAnswers[i] = randomNum % 2 == 0 ? Engine.YES_TEXT : Engine.NO_TEXT;
         }
         Engine.runGame(RULES, gameQuestions, rightAnswers);
-    }
-
-    private static String getRightAnswer(int randomNum) {
-        return randomNum % 2 == 0 ? Engine.YES_TEXT : Engine.NO_TEXT;
     }
 }
