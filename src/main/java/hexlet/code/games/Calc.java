@@ -14,7 +14,7 @@ public class Calc {
             int firstRandomNum = Utils.MIN_OF_RANDOM + Utils.getRandomNum(Utils.MAX_OF_RANDOM);
             int secondRandomNum = Utils.MIN_OF_RANDOM + Utils.getRandomNum(Utils.MAX_OF_RANDOM);
             String randomOperator = OPERATORS[Utils.getRandomNum(OPERATORS.length)];
-            if (randomOperator.equals("*")) { // Difficulty is decreased to one-tenth of its original level for easier game
+            if (randomOperator.equals("*")) { // Difficulty is decreased to one-tenth for easier game
                 firstRandomNum = firstRandomNum / DECREASE_DIFFICULTY_CALC;
                 secondRandomNum = secondRandomNum / DECREASE_DIFFICULTY_CALC;
             }
