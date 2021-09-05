@@ -26,9 +26,9 @@ public class App {
         System.out.println();
         if (selectedGame != EXIT_0) {
             System.out.println("Welcome to the Brain Games!");
-            Engine.setPlayerName();
             switch (selectedGame) {
                 case GREET_1:
+                    Cli.sayHello();
                     break;
                 case EVEN_2:
                     Even.evenGame();

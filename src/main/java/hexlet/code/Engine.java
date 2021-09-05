@@ -4,16 +4,19 @@ import java.util.Scanner;
 
 public class Engine {
 
-    private static String name;
     public static final int NUMBER_OF_TRIES = 3;
     public static final String YES_TEXT = "yes";
     public static final String NO_TEXT = "no";
 
-    public static void setPlayerName() {
-        name = Cli.getNameFromPlayer();
+    public static String getNameFromPlayer() {
+        System.out.print("May I have your name? ");
+        Scanner playerNameScanner = new Scanner(System.in);
+        return playerNameScanner.nextLine();
     }
 
     public static void runGame(String rules, String[] gameQuestions, String[] rightAnswers) {
+        String playerName = getNameFromPlayer();
+        System.out.println("Hello, " + playerName + "!");
         Scanner getAnswerFromPlayer = new Scanner(System.in);
         int counterOfCorrectAnswers = 0;
         System.out.println(rules);
@@ -24,7 +27,7 @@ public class Engine {
             String playerAnswer = getAnswerFromPlayer.nextLine();
             if (!rightAnswers[i].equals(playerAnswer)) {
                 System.out.printf("'%s' is wrong answer ;(. Correct answer was '%s'%n", playerAnswer, rightAnswers[i]);
-                System.out.println("Let's try again, " + name + "!");
+                System.out.println("Let's try again, " + playerName + "!");
                 break;
             } else {
                 System.out.println("Correct!");
@@ -32,7 +35,7 @@ public class Engine {
             }
         }
         if (counterOfCorrectAnswers == NUMBER_OF_TRIES) {
-            System.out.println("Congratulations, " + name + "!");
+            System.out.println("Congratulations, " + playerName + "!");
         }
     }
 }

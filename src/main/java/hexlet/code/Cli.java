@@ -6,8 +6,10 @@ public class Cli {
     public static String getNameFromPlayer() {
         System.out.print("May I have your name? ");
         Scanner playerNameScanner = new Scanner(System.in);
-        String playerName = playerNameScanner.nextLine();
+        return playerNameScanner.nextLine();
+    }
+    public static void sayHello() {
+        String playerName = getNameFromPlayer();
         System.out.println("Hello, " + playerName + "!");
-        return playerName;
     }
 }
