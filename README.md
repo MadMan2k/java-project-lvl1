@@ -5,12 +5,22 @@
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/52c692d59e00bb065757/maintainability)](https://codeclimate.com/github/MadMan2k/java-project-lvl1/maintainability)
 
-ASCIINEMA (Even) : https://asciinema.org/a/oWoQ5Cr90mZK7JbBnLWIk11HQ
+ASCIINEMA (Even) :
 
-ASCIINEMA (Calc) : https://asciinema.org/a/EjOHGoZGH8fhXNtAoBrNUWMOl
+[![asciicast](https://asciinema.org/a/oWoQ5Cr90mZK7JbBnLWIk11HQ.svg)](https://asciinema.org/a/oWoQ5Cr90mZK7JbBnLWIk11HQ)
 
-ASCIINEMA (GCD) : https://asciinema.org/a/U3m7SCxR8M5FMrdCZCENng40B
+ASCIINEMA (Calc) :
 
-ASCIINEMA (Progression) : https://asciinema.org/a/9tqmHmtvd4aLLs8TiiyOQlcoL
+[![asciicast](https://asciinema.org/a/EjOHGoZGH8fhXNtAoBrNUWMOl.svg)](https://asciinema.org/a/EjOHGoZGH8fhXNtAoBrNUWMOl)
 
-ASCIINEMA (Prime) : https://asciinema.org/a/yNXXje3zCAiyVEaolbPhTfNoX
+ASCIINEMA (GCD) :
+
+[![asciicast](https://asciinema.org/a/U3m7SCxR8M5FMrdCZCENng40B.svg)](https://asciinema.org/a/U3m7SCxR8M5FMrdCZCENng40B)
+
+ASCIINEMA (Progression) :
+
+[![asciicast](https://asciinema.org/a/9tqmHmtvd4aLLs8TiiyOQlcoL.svg)](https://asciinema.org/a/9tqmHmtvd4aLLs8TiiyOQlcoL)
+
+ASCIINEMA (Prime) :
+
+[![asciicast](https://asciinema.org/a/yNXXje3zCAiyVEaolbPhTfNoX.svg)](https://asciinema.org/a/yNXXje3zCAiyVEaolbPhTfNoX)
