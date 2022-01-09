@@ -5,9 +5,9 @@ import hexlet.code.games.Even;
 import hexlet.code.games.GCD;
 import hexlet.code.games.Prime;
 import hexlet.code.games.Progression;
-
 import java.util.Scanner;
 
+// Brain Games
 public class App {
     private static final int EXIT_0 = 0;
     private static final int GREET_1 = 1;
